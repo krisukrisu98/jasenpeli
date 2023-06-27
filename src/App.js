@@ -4,6 +4,7 @@ import { Table } from "./Components/Table";
 
 function App() {
 
+  
   // Teemat ikä, toiminta ja asema
   const [activeButtonIka, setActiveButtonIka] = useState(0);
   const [activeButtonToiminta, setActiveButtonToiminta] = useState(0);
