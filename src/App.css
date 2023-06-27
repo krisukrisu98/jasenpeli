@@ -1,0 +1,253 @@
+.App {
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #F0eeeb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Tekstien ulkoasut */
+
+p {
+  color:black;
+  font-size: medium;
+}
+
+p2 {
+  font-size: large;
+}
+
+h3, h4, h5 {
+  color: black;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+
+
+#button-container-ika {
+  display: flex;
+  flex-direction: row; /* Muuta pystysuunnasta vaakasuuntaan */
+  justify-content: center; /* Keskitä napit vaakasuunnassa */
+  margin-top: 0px;
+}
+
+#button-container-ika button {
+  margin-right: 20px; /* Lisää väliä napin oikealle puolelle */
+  height: 50px;
+  width: 100px;
+}
+
+#button-container-toiminta {
+  display: flex;
+  flex-direction: row; /* Muuta pystysuunnasta vaakasuuntaan */
+  justify-content: center; /* Keskitä napit vaakasuunnassa */
+  margin-top: 0px;
+}
+
+#button-container-toiminta button {
+  margin-right: 20px; /* Lisää väliä napin oikealle puolelle */
+  height: 50px;
+  width: 100px;
+}
+
+#button-container-asemataso {
+  display: flex;
+  flex-direction: row; /* Muuta pystysuunnasta vaakasuuntaan */
+  justify-content: center; /* Keskitä napit vaakasuunnassa */
+  margin-top: 0px;
+}
+
+#button-container-asemataso button {
+  margin-right: 20px; /* Lisää väliä napin oikealle puolelle */
+  height: 50px;
+  width: 100px;
+}
+
+
+.active {
+  background-color: black;
+  color: white;
+}
+
+.inactive {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+}
+
+.activeButtonToiminta {
+
+  color: #Eb5a6c;
+}
+
+/* Laatikot ja niiden tekstit*/
+
+.selection-info {
+  display: flex;
+}
+
+.box-ika-hyva {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #C5ffc1;
+  width: 650px; 
+  height: flex; 
+  color:black;
+  text-align: left;
+}
+
+.box-ika-huono {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #Eb5a6c;
+  text-align: left;
+}
+
+.selection-info-toiminta {
+  display: flex;
+}
+
+.box-toiminta-hyva {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #C5ffc1;
+  width: 350px; 
+  height: 300px; 
+  color:black;
+}
+
+.box-toiminta-huono {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #Eb5a6c;
+}
+
+
+.selection-info-asema {
+  display: flex;
+}
+
+.box-asema-hyva {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #C5ffc1;
+  width: 350px; 
+  height: 300px; 
+  color:black;
+}
+
+.box-asema-huono {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #Eb5a6c;
+}
+
+.selection-info-yhteenveto {
+  display: flex;
+}
+
+.box-yhteenveto-vasen {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #C5ffc1;
+  color:black;
+}
+
+.box-yhteenveto-oikea {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #Eb5a6c;
+}
+
+.box-yhteenveto-arvo {
+  background-color: #d7d2cb;
+  width: 100%;
+}
+
+.box-yhteenveto-alku {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #C5ffc1;
+  color:black;
+  text-align: left;
+  font-size: medium;
+}
+
+.box-yhteenveto-alku-otsikko {
+  flex: 1;
+  text-align: center;
+}
+
+.box-yhteenveto-alku-otsikko {
+  flex: 1;
+  text-align: center;
+  width: 600px;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-info-box {
+text-align: right;
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
+
+
+.listaus {
+  text-align: left;
+  /*list-style-type: none; */
+}
+
+
+.yleinen-rahallinen-etu {
+float:right;
+}
+
+
+.valitaso {
+  padding-left: 0%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  margin: 0%;
+}
+
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox-container label {
+  margin-left: 10px;
+  float: right;
+}
+
+.checkbox {
+  margin-right: 100px;;
+}
