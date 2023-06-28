@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/krisukrisu98/jasenpeli/static/css/main.6ff06966.css",
-    "main.js": "/krisukrisu98/jasenpeli/static/js/main.ae6a504d.js",
-    "static/js/787.7ff8cb2c.chunk.js": "/krisukrisu98/jasenpeli/static/js/787.7ff8cb2c.chunk.js",
-    "index.html": "/krisukrisu98/jasenpeli/index.html",
-    "main.6ff06966.css.map": "/krisukrisu98/jasenpeli/static/css/main.6ff06966.css.map",
-    "main.ae6a504d.js.map": "/krisukrisu98/jasenpeli/static/js/main.ae6a504d.js.map",
-    "787.7ff8cb2c.chunk.js.map": "/krisukrisu98/jasenpeli/static/js/787.7ff8cb2c.chunk.js.map"
+    "main.css": "/jasenpeli/static/css/main.6ff06966.css",
+    "main.js": "/jasenpeli/static/js/main.164e9995.js",
+    "static/js/787.7ff8cb2c.chunk.js": "/jasenpeli/static/js/787.7ff8cb2c.chunk.js",
+    "index.html": "/jasenpeli/index.html",
+    "main.6ff06966.css.map": "/jasenpeli/static/css/main.6ff06966.css.map",
+    "main.164e9995.js.map": "/jasenpeli/static/js/main.164e9995.js.map",
+    "787.7ff8cb2c.chunk.js.map": "/jasenpeli/static/js/787.7ff8cb2c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6ff06966.css",
-    "static/js/main.ae6a504d.js"
+    "static/js/main.164e9995.js"
   ]
 }
