@@ -1,23 +1,8 @@
 .App {
   text-align: center;
+  background-color: #b6a99b;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #F0eeeb;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 /* Tekstien ulkoasut */
 
@@ -27,27 +12,35 @@ p {
 }
 
 p2 {
-  font-size: large;
+  font-size: medium;
+  font-weight: bold
 }
 
 h3, h4, h5 {
   color: black;
   padding-bottom: 0px;
   margin-bottom: 10px;
+  margin-top: 0px;
 }
 
+h2 {
+  margin-left: 10px;
+}
+
+/* Buttonit */
 
 #button-container-ika {
   display: flex;
   flex-direction: row; /* Muuta pystysuunnasta vaakasuuntaan */
   justify-content: center; /* Keskitä napit vaakasuunnassa */
   margin-top: 0px;
+  flex-wrap: wrap;
 }
 
 #button-container-ika button {
   margin-right: 20px; /* Lisää väliä napin oikealle puolelle */
   height: 50px;
-  width: 100px;
+  width: auto;
 }
 
 #button-container-toiminta {
@@ -55,12 +48,20 @@ h3, h4, h5 {
   flex-direction: row; /* Muuta pystysuunnasta vaakasuuntaan */
   justify-content: center; /* Keskitä napit vaakasuunnassa */
   margin-top: 0px;
+  flex-wrap: wrap;
+  align-content: space-around;
 }
 
 #button-container-toiminta button {
   margin-right: 20px; /* Lisää väliä napin oikealle puolelle */
   height: 50px;
-  width: 100px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  #button-container-toiminta button:nth-child(2) {
+    margin-bottom: 10px;
+  }
 }
 
 #button-container-asemataso {
@@ -68,12 +69,13 @@ h3, h4, h5 {
   flex-direction: row; /* Muuta pystysuunnasta vaakasuuntaan */
   justify-content: center; /* Keskitä napit vaakasuunnassa */
   margin-top: 0px;
+  flex-wrap: wrap;
 }
 
 #button-container-asemataso button {
   margin-right: 20px; /* Lisää väliä napin oikealle puolelle */
   height: 50px;
-  width: 100px;
+  width: auto;
 }
 
 
@@ -90,152 +92,198 @@ h3, h4, h5 {
 
 .activeButtonToiminta {
 
-  color: #Eb5a6c;
+  color: #ff5b69;
 }
 
 /* Laatikot ja niiden tekstit*/
 
-.selection-info {
-  display: flex;
-}
-
-.box-ika-hyva {
+.box-hyva {
   flex: 1;
   margin: 10px;
   padding: 20px;
-  background-color: #C5ffc1;
-  width: 650px; 
+  background-color: white;
   height: flex; 
   color:black;
   text-align: left;
+  width: auto;
 }
 
-.box-ika-huono {
+.box-huono {
   flex: 1;
   margin: 10px;
   padding: 20px;
-  background-color: #Eb5a6c;
+  background-color: white;
   text-align: left;
+  border: 3px solid #ff5b69;
+  width: auto;
 }
 
-.selection-info-toiminta {
+.box-peukku {
+  float: right;
+}
+
+.selection-info-ika,
+.selection-info-toiminta,
+.selection-info-asema{
   display: flex;
 }
 
-.box-toiminta-hyva {
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #C5ffc1;
-  width: 350px; 
-  height: 300px; 
-  color:black;
-}
-
-.box-toiminta-huono {
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #Eb5a6c;
+/* Responsiiviset tyylien määrittely eri näyttökokojen osalta */
+@media (max-width: 768px) {
+  .selection-info-ika,
+  .selection-info-toiminta,
+  .selection-info-asema {
+    display: block; /* Poistetaan flex-käyttö, kun näyttö on pienempi kuin 768 pikseliä */
+  }
 }
 
 
-.selection-info-asema {
-  display: flex;
-}
-
-.box-asema-hyva {
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #C5ffc1;
-  width: 350px; 
-  height: 300px; 
-  color:black;
-}
-
-.box-asema-huono {
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #Eb5a6c;
-}
-
-.selection-info-yhteenveto {
-  display: flex;
-}
-
-.box-yhteenveto-vasen {
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #C5ffc1;
-  color:black;
-}
-
-.box-yhteenveto-oikea {
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #Eb5a6c;
-}
-
-.box-yhteenveto-arvo {
-  background-color: #d7d2cb;
-  width: 100%;
-}
+/* Yhteenveto boksit */
 
 .box-yhteenveto-alku {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .box-yhteenveto-alku-kuva {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.box-yhteenveto-alku-otsikko .liikkuvaTeksti{
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.liikkuvaTeksti p {
+  position: absolute;
+  font-size: 20px;
+  color: white;
+  line-height: 0px;
+  font-weight: bold;
+  
+  &:nth-of-type(1) {
+    color: white;
+}
+}
+
+.box-yhteenveto-alku-teksti {
   flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #C5ffc1;
+  margin: 100px;
+  margin-top: 20px;
+  background-color: white;
   color:black;
   text-align: left;
   font-size: medium;
 }
 
-.box-yhteenveto-alku-otsikko {
-  flex: 1;
-  text-align: center;
+@media (max-width: 768px) {
+  .box-yhteenveto-alku-teksti {
+    margin: 10px;
+  }
 }
 
-.box-yhteenveto-alku-otsikko {
-  flex: 1;
-  text-align: center;
-  width: 600px;
+.box-yhteenveto-alku-teksti li {
+  list-style-type: none;
 }
 
-.services-container {
+
+.box-yhteenveto-alaotsikko-teksti {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5px;
+  margin-right: 20px;
+  margin-left: 35px;
+  margin-bottom: 5px;
+  position: relative;
+  background-color: white;
 }
 
-.service-info-box {
-text-align: right;
-margin-bottom: 0px;
-padding-bottom: 0px;
+.box-yhteenveto-alaotsikko-teksti:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 15px;
+  top: 0;
+  border-top: 2px solid rgb(169, 169, 169);
 }
 
+.box-yhteenveto-alku-raha {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff5b69;
+  border-bottom: 5px solid #b6a99b;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+}
+
+.box-yhteenveto-alku-raha h3 {
+  color: white;
+}
+
+.box-yhteenveto-alaotsikko-raha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 37px;
+  padding-top: 10px;
+}
+
+
+/* Listaukset */
 
 .listaus {
   text-align: left;
   /*list-style-type: none; */
 }
 
-
 .yleinen-rahallinen-etu {
-float:right;
+  border: 3px solid #ff5b69;
+}
+
+.yleinen-rahallinen-etu img {
+  display: block;
+  margin: 0 auto;
+}
+
+.price-value {
+  text-align: right;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 37px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.yleinen-rahallinen-etu .price-wrapper:nth-child(5)::after,
+.yleinen-rahallinen-etu .price-wrapper:nth-child(6)::after{
+  content: "";
+  position: absolute;
+  left: 40px;
+  right: 37px;
+  top: 0;
+  border-top: 2px solid rgb(169, 169, 169);
 }
 
 
-.valitaso {
-  padding-left: 0%;
-  padding-top: 0%;
-  padding-bottom: 0%;
-  margin: 0%;
+.price-wrapper li {
+  list-style-type: disc;
 }
 
+/* Checkboksit */
 
 .checkbox-container {
   display: flex;
@@ -250,4 +298,33 @@ float:right;
 
 .checkbox {
   margin-right: 100px;;
+}
+
+
+.paataso-container {
+  border-top: 5px solid #b6a99b;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding: 0px;
+}
+
+/* Liittyminen */
+
+.liittyminen button {
+  font-size: x-large;
+  box-shadow: 0 0 5px #ff5b69,
+  0 0 25px #ff5b69;
+  background-color: #ff5b69;
+  color: white;
+  height: 60px;
+  width: 50%;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.liittyminen button:hover {
+
+  box-shadow: 0 0 5px #ff5b69,
+  0 0 25px #ff5b69, 0 0 50px #ff5b69,
+  0 0 100px #ff5b69, 0 0 200px #ff5b69;
 }
