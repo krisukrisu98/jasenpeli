@@ -1,0 +1,7 @@
+/* fonts.css */
+
+@font-face {
+    font-family: 'Averta'; /* Fontin nimi font-familyssa */
+    src: url('./fonts/SE_Averta-Bold.otf') format('opentype'); /* Polku ja tiedostonimi */
+  }
+  

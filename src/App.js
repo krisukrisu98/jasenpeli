@@ -46,7 +46,7 @@ function App() {
     { id: 23, price: 500, selected: true },
     { id: 24, price: 300, selected: true },
     { id: 25, price: 20, selected: true },
-    { id: 26, price: 2900, selected: true },
+    { id: 26, price: 0, selected: true },
     { id: 27, price: 0, selected: true },
     { id: 28, price: 0, selected: true },
     { id: 29, price: 0, selected: true },
@@ -69,6 +69,7 @@ function App() {
       )
     );
   };
+  
 
   const calculateTotalPrice = () => {
     return selectedProducts.reduce((total, product) => {
@@ -78,6 +79,7 @@ function App() {
       return total;
     }, 0);
   };
+  
 
   const priceYhteisoJaVerkosto = selectedProducts
   .filter(product => product.id >= 1 && product.id <= 5 && product.selected)
@@ -108,9 +110,9 @@ function App() {
   const [activeButtonToiminta, setActiveButtonToiminta] = useState(0);
   const [activeButtonAsema, setActiveButtonAsema] = useState(0);
 
-  const [arvoIka, setArvoIka] = useState(null);
-  const [arvoToiminta, setArvoToiminta] = useState(null);
-  const [arvoAsema, setArvoAsema] = useState(null);
+  const [arvoIka, setArvoIka] = useState("18-30");
+  const [arvoToiminta, setArvoToiminta] = useState("työelämässä");
+  const [arvoAsema, setArvoAsema] = useState("asiantuntija");
 
   // Jäsenen hyöhyt ylätekstit
   const [showMoreTextKaikki1, setShowMoreTextKaikki1] = useState(false);
@@ -457,7 +459,7 @@ if (index === 0) {
 } else if (index === 1) {
   arvoToiminta = "Työelämässsä";
 } else if (index === 2) {
-  arvoToiminta = "Työtön";
+  arvoToiminta = "Työnhakija";
 } else if (index === 3) {
   arvoToiminta = "Yrittäjä";
 } else if (index === 4) {
@@ -491,13 +493,13 @@ setArvoToiminta(arvoToiminta);
     let arvoAsema;
     // Määritä arvo valitun buttonin mukaan
 if (index === 0) {
-  arvoAsema = "Asiantuntija";
+  arvoAsema = "asiantuntija";
 } else if (index === 1) {
-  arvoAsema = "Päälikkö";
+  arvoAsema = "päälikkö";
 } else if (index === 2) {
-  arvoAsema = "Johtaja";
+  arvoAsema = "johtaja";
 }else if (index === 3) {
-  arvoAsema = "Ei mikään näistä";
+  arvoAsema = "'ei mikään näistä'";
 }
 
 setArvoAsema(arvoAsema);
@@ -509,31 +511,41 @@ setArvoAsema(arvoAsema);
     if (index === 0) {
       return   <ul>
       <li><p2>Henkilökohtaista juridinen nuvontaa</p2> työelämän lakiasioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+      <br></br>
       <li><p2>Ammatillinen kehittyminen:</p2> Suomen Ekonomit tarjoaa jäsenilleen monipuolisia koulutus- ja kehittymismahdollisuuksia. Liitto järjestää esimerkiksi ammatillisia koulutuksia, työpajoja ja webinaareja, jotka auttavat sinua kehittämään osaamistasi ja pysymään ajan tasalla alan muutoksista. Jäsenenä saat myös pääsyn liiton tarjoamiin urapalveluihin, kuten työnhakuneuvontaan ja uravalmennukseen, jotka voivat auttaa sinua edistymään urallasi.</li>
+      <br></br>
       <li><p2>Tonnin jäsenedut - Ammattilehti</p2> jopa 70 % alennuksella, Danske Bankin asuntolainaedut (jopa 1600€), Henkivakuutus 61 % alennuksella ja koko Suomen laajuiset Member+ edut. </li>
     </ul>
     } else if (index === 1) {
       return <ul>
       <li><p2>Henkilökohtaista juridinen nuvontaa</p2>työelämän lakiasioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+      <br></br>
       <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa ja koulutuksia - </p2>Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Tarjoamme jäsenilleen jatkuvia kehittymismahdollisuuksia erilaisten koulutusten ja tapahtumien avulla.</li>
+      <br></br>
       <li><p2>Primus henkivakuutus - </p2>Saat Suomen edullisimman henkivakuutuksen itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin 540 euroa henkivakuutuksen hinnassa. </li>
     </ul>
     } else if (index === 2) {
       return <ul>
       <li><p2>Henkilökohtaista juridinen nuvontaa</p2>työelämän lakiasioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+      <br></br>
       <li><p2>Edunvalvonta ja yhteiskunnallinen vaikuttamistyö - </p2> ajamme aina ensisijaisesti jäsentemme etuja.  Pyrimme mm. työehtosopimusten kautta turvaamaan jäsenillemme parhaat mahdolliset työsuhteen ehdot, kuten sairauajanpalkka, lomarahat ja säännölliset palkankorotukset. </li>
+      <br></br>
       <li><p2>Primus henkivakuutus - </p2>Saat Suomen edullisimman henkivakuutuksen itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin 540 euroa henkivakuutuksen hinnassa. </li>
     </ul>
     } else if (index === 3) {
       return <ul>
       <li><p2>Henkilökohtaista juridinen nuvontaa</p2>työelämän lakiasioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+      <br></br>
       <li><p2>Edunvalvonta ja yhteiskunnallinen vaikuttamistyö - </p2> ajamme aina ensisijaisesti jäsentemme etuja.  Pyrimme mm. työehtosopimusten kautta turvaamaan jäsenillemme parhaat mahdolliset työsuhteen ehdot, kuten sairauajanpalkka, lomarahat ja säännölliset palkankorotukset. </li>
+      <br></br>
       <li><p2>Primus henkivakuutus - </p2>Saat Suomen edullisimman henkivakuutuksen itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin 540 euroa henkivakuutuksen hinnassa. </li>
     </ul>
     } else if (index === 4) {
       return <ul>
-      <li><p2>Henkilökohtaista juridinen nuvontaa</p2>työelämän lakiasioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+      <li><p2>Edunvalvonta ja ammatillinen arvostus:</p2> Suomen Ekonomit ajaa jäsentensä etuja talousalan työmarkkinoilla. Suomen Ekonomien jäsenyys tarjoaa mahdollisuuden olla osa laajempaa talousalan yhteisöä ja vaikuttaa alan kehittämiseen.</li>
+      <br></br>
       <li><p2>Edunvalvonta ja yhteiskunnallinen vaikuttamistyö - </p2> ajamme aina ensisijaisesti jäsentemme etuja.  Pyrimme mm. työehtosopimusten kautta turvaamaan jäsenillemme parhaat mahdolliset työsuhteen ehdot, kuten sairauajanpalkka, lomarahat ja säännölliset palkankorotukset. </li>
+      <br></br>
       <li><p2>Primus henkivakuutus - </p2>Saat Suomen edullisimman henkivakuutuksen itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin 540 euroa henkivakuutuksen hinnassa. </li>
     </ul>;
     }
@@ -543,31 +555,41 @@ setArvoAsema(arvoAsema);
     if (index === 0) {
       return <ul>
       <li><p2>Oikeudellinen turva - </p2> Huolehdithan, että sinulla on riittävän tasoinen oikeudellinen turva työelämän ongelmatilanteiteita tulevaisuudessa. Vakuutusyhtiöt tai työttömyyskassa eivät tarjoa joko lainkaan tai ainakaan samanlaatuista oikeudellista turvaa ekonomeille. Jäsenyysvuotesi kerryttävät turvaa meillä.</li>
+      <br></br>
       <li><p2>Palkankorotukset - </p2> Huolehdithan, että sinulla on ekonomien palkkauksen asiantuntijoita ja tutkittua tietoa tukenasi palkkaneuvotteluissa ja juristeja tarkistamassa työsopimuksiasi, jotta saat ansaitsemasi arvoista palkkaa ja työelämää.</li>
+      <br></br>
       <li><p2>Ymmärrys kehityksestä - </p2> Huolehdithan, että kehität itseäsi myös valmistumisen jälkeen ja pysyt silloin kehityksen kärryillä. Tarjoamme jäsenillemme niin koulutuksia ja sisältöjä itsensä kehittämiseen. Lisäksi saat kaupallisen alan digi- ja printtilehtiä jopa 70 % alennuksella.</li>
     </ul>
     } else if (index === 1) {
       return <ul>
       <li><p2>Oikeudellinen turva - </p2> Huolehdithan, että sinulla on riittävän tasoinen oikeudellinen turva työelämän ongelmatilanteiteita tulevaisuudessa. Vakuutusyhtiöt tai työttömyyskassa eivät tarjoa joko lainkaan tai ainakaan samanlaatuista oikeudellista turvaa ekonomeille. Jäsenyysvuotesi kerryttävät turvaa meillä.</li>
+      <br></br>
       <li><p2>Suunnan etsiminen - </p2> Huolehdithan, että sinulla on käytettävissä asiantuntijoita apunasi, kun mietit uusia urasuunnitelmia tai mietit seuraavien askeleiden ottoa. Jäsentemme käytössä ovat muun muassa kokeneet uravalmentajat, johtajasopimuksia jatkuvasti tekevät juristit ja erilaisia työnhakua tukevia palveluita.</li>
+      <br></br>
       <li><p2>Ymmärrys kehityksestä - </p2> Huolehdithan, että kehität itseäsi myös valmistumisen jälkeen ja pysyt silloin kehityksen kärryillä. Tarjoamme jäsenillemme niin koulutuksia ja sisältöjä itsensä kehittämiseen. Lisäksi saat kaupallisen alan digi- ja printtilehtiä jopa 70 % alennuksella.</li>
     </ul>;
     } else if (index === 2) {
       return <ul>
       <li><p2>Oikeudellinen turva - </p2> Huolehdithan, että sinulla on riittävän tasoinen oikeudellinen turva työelämän ongelmatilanteiteita tulevaisuudessa. Vakuutusyhtiöt tai työttömyyskassa eivät tarjoa joko lainkaan tai ainakaan samanlaatuista oikeudellista turvaa ekonomeille. Jäsenyysvuotesi kerryttävät turvaa meillä.</li>
+      <br></br>
       <li><p2>Työehtosopimukset - </p2> Huolehdithan, että suomalaisilla työpaikoilla tehdään työehtosopimuksia siten, että ne tukevat niin toiminnan kasvua, mutta ennen kaikkea palkitsevat arvokkaan työn tekijöitä.</li>
+      <br></br>
       <li><p2>Ymmärrys kehityksestä - </p2> Huolehdithan, että kehität itseäsi myös valmistumisen jälkeen ja pysyt silloin kehityksen kärryillä. Tarjoamme jäsenillemme niin koulutuksia ja sisältöjä itsensä kehittämiseen. Lisäksi saat kaupallisen alan digi- ja printtilehtiä jopa 70 % alennuksella.</li>
     </ul>;
     } else if (index === 3) {
       return <ul>
       <li><p2>Oikeudellinen turva - </p2> Huolehdithan, että sinulla on riittävän tasoinen oikeudellinen turva työelämän ongelmatilanteiteita tulevaisuudessa. Vakuutusyhtiöt tai työttömyyskassa eivät tarjoa joko lainkaan tai ainakaan samanlaatuista oikeudellista turvaa ekonomeille. Jäsenyysvuotesi kerryttävät turvaa meillä.</li>
+      <br></br>
       <li><p2>Suunnan etsiminen - </p2> Huolehdithan, että sinulla on käytettävissä asiantuntijoita apunasi, kun mietit uusia urasuunnitelmia tai mietit seuraavien askeleiden ottoa. Jäsentemme käytössä ovat muun muassa kokeneet uravalmentajat, johtajasopimuksia jatkuvasti tekevät juristit ja erilaisia työnhakua tukevia palveluita.</li>
+      <br></br>
       <li><p2>Ymmärrys kehityksestä - </p2>Huolehdithan, että kehität itseäsi myös uran aikana ja pysyt silloin kehityksen kärryillä. Tarjoamme jäsenillemme niin koulutuksia ja sisältöjä itsensä kehittämiseen. Lisäksi saat kaupallisen alan digi- ja printtilehtiä jopa 70 % alennuksella. </li>
     </ul>;
     } else if (index === 4) {
       return <ul>
       <li><p2>Tue alan arvostuksen nostamista - </p2>Olethan mukana varmistamassa, että kauppatieteellisen koulutuksen osaajia ja osaamista arvostetaan yhteiskunnassa myös tulevaisuudessa. Teemme jatkuvasti niin vaikuttamistyötä kuin mediatyötäkin kauppatieteellisen alan arvostuksen edistämiseksi.</li>
+      <br></br>
       <li><p2>Ymmärrys kehityksestä - </p2> Huolehdithan, että voit seurata itseaäsi kiinnostavia teemoja myös eläkkeelle jäännin jälkeen. Sisältömme varmistavat, että pysyt eläkkeelläkin kartalla tulevaisuudesta. Saat kaupallisen alan digi- ja printtilehtiä jopa 70 % alennuksella. </li>
+      <br></br>
       <li><p2>Rahan arvoiset jäsenedut - </p2>Varmistathan, että saat rahanarvoisia etuja myös eläkkeellä ollessasi. Jäsenemämme saatu puoleen hintaan samat edut kuin työssäkäyvät jäsenemme.</li>
     </ul>;
     }
@@ -579,31 +601,41 @@ setArvoAsema(arvoAsema);
       if (index === 0) {
         return <ul>
         <li><p2>Henkilökohtaista juridinen nuvontaa</p2> työelämään liittyvissä asioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen.</li>
+        <br></br>
         <li><p2>Edunvalvonta ja yhteiskunnallinen vaikuttamistyö - </p2> pyrimme työehtosopimusten kautta turvaamaan jäsenillemme parhaat mahdolliset työsuhteen ehdot, kuten sairauajanpalkka, lomarahat ja säännölliset palkankorotukset.</li>
+        <br></br>
         <li><p2>Tonnin jäsenedut - </p2>Ammattilehti jopa 70 % alennuksella, Danske Bankin asuntolainaedut (jopa 1600€), Henkivakuutus 61 % alennuksella ja koko Suomen laajuiset Member+ edut. </li>
       </ul>;
       } else if (index === 1) {
         return <ul>
         <li><p2>Henkilökohtaista juridinen nuvontaa</p2> työelämään liittyvissä asioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen.</li>
+        <br></br>
         <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa - </p2> Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Uravalmentajillamme on erinomainen käsitys ekonomien palkoista ja palkkakehityksestä.</li>
+        <br></br>
         <li><p2>Primus henkivakuutus - </p2>Saat Suomen edullisimman henkivakuutuksen itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin 540 euroa henkivakuutuksen hinnassa. </li>
       </ul>;
       } else if (index === 2) {
         return <ul>
         <li><p2>Henkilökohtaista juridinen nuvontaa</p2> työelämään liittyvissä asioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen.</li>
+        <br></br>
         <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa - </p2> Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Uravalmentajillamme on erinomainen käsitys ekonomien palkoista ja palkkakehityksestä.</li>
+        <br></br>
         <li><p2>Primus henkivakuutus - </p2>Saat Suomen edullisimman henkivakuutuksen itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin 540 euroa henkivakuutuksen hinnassa. </li>
       </ul>;
       } else if (index === 3) {
         return <ul>
         <li><p2>Henkilökohtaista juridinen nuvontaa</p2> työelämään liittyvissä asioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen.</li>
+        <br></br>
         <li><p2>Tonnin jäsenedut - </p2>Ammattilehti jopa 70 % alennuksella, Danske Bankin asuntolainaedut (jopa 1600€), Henkivakuutus 61 % alennuksella ja koko Suomen laajuiset Member+ edut. </li>
+        <br></br>
         <li><p2>Primus henkivakuutus - </p2>Saat Suomen edullisimman henkivakuutuksen itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin 540 euroa henkivakuutuksen hinnassa. </li>
       </ul>;
       } else if (index === 4) {
         return <ul>
         <li><p2>Tapahtumat - </p2> tarjoamme jäsenillemme myös viihteellisempiä tapahtumia kuten Linnanmäen Heko Heko päivä tai leffa ensi-iltoja.</li>
+        <br></br>
         <li><p2>Edunvalvonta ja ammatillinen arvostus - </p2>ajamme jäsentemme etuja ja  tarjoaa mahdollisuuden olla osa laajempaa talousalan yhteisöä sekä vaikuttaa alan kehittämiseen.</li>
+        <br></br>
         <li><p2>Suomen laajuiset Member+ edut - </p2>Palveluun on kerätty ajankohtaisia etuja ja palveluita, mm. mökkeilyyn, matkailuun, vapaa-aikaan ja hyvinvointiin liittyen.</li>
       </ul>;
       }
@@ -613,31 +645,41 @@ setArvoAsema(arvoAsema);
       if (index === 0) {
         return  <ul>
         <li><p2>Alan arvostuksen kehittäminen - </p2> Huolehdithan siitä, että kauppatieteellinen ala kehittyy mieleiseesi suuntaan. Jäsenenämme olet kehittämässä alan opetusta ja käytänteitä. Teemme muun muassa yliopistoissa edunvalvontaa opiskelijayhdistysten kautta ja valtakunnallisesti montaa eri reittiä. Lisäksi tuotamme yliopistoille muun muassa vastavalmistuneiden palautekyselyä.</li>
+        <br></br>
         <li><p2>Työn haku - </p2>Varmistathan, että saat riittävästi tukea työnhakuun ja työnhaun dokumentteihin. Tarjoamme opiskelijajäsenillemme Kylterin Työnhaun palvelua, jossa niin vinkkejä työhaun eri vaiheisiin, esimerkkejä työnhaun dokumenteista ja harjoitteita työnhaussa menestymiseen. </li>
+        <br></br>
         <li><p2>Ymmärrys kehityksestä - </p2>Huolehdithan, että kehität itseäsi seuraamalla alan kehitystä. Tarjoamme opiskelijajäsenillemme niin koulutuksia ja sisältöjä itsensä kehittämiseen. Lisäksi saat opiskelijana ilmaisen Kauppalehti digin lukuvuodeksi. </li>
       </ul>;
       } else if (index === 1) {
         return <ul>
         <li><p2>Oikeudellinen turva - </p2>Huolehdithan, että sinulla on riittävän tasoinen oikeudellinen turva työelämän ongelmatilanteiteita tulevaisuudessa. Vakuutusyhtiöt tai työttömyyskassa eivät tarjoa joko lainkaan tai ainakaan samanlaatuista oikeudellista turvaa ekonomeille. Jäsenyysvuotesi kerryttävät turvaa meillä.</li>
+        <br></br>
         <li><p2>Suunnan etsiminen - </p2>Huolehdithan, että sinulla on käytettävissä asiantuntijoita apunasi, kun mietit uusia urasuunnitelmia tai mietit seuraavien askeleiden ottoa. Jäsentemme käytössä ovat muun muassa kokeneet uravalmentajat, johtajasopimuksia jatkuvasti tekevät juristit ja erilaisia työnhakua tukevia palveluita.</li>
+        <br></br>
         <li><p2>Työehtosopimukset - </p2>Huolehdithan, että suomalaisilla työpaikoilla tehdään työehtosopimuksia siten, että ne tukevat niin toiminnan kasvua, mutta ennen kaikkea palkitsevat arvokkaan työn tekijöitä. Olemalla mukana varmistamassa työehtosopimuksia varmistat, että myös toimialaa vaihtaessa saat työntekoa tukevat sopimukset.</li>
       </ul>;
       } else if (index === 2) {
         return <ul>
         <li><p2>Oikeudellinen turva - </p2> Huolehdithan, että sinulla on riittävän tasoinen oikeudellinen turva työelämän ongelmatilanteiteita tulevaisuudessa. Vakuutusyhtiöt tai työttömyyskassa eivät tarjoa joko lainkaan tai ainakaan samanlaatuista oikeudellista turvaa ekonomeille. Jäsenyysvuotesi kerryttävät turvaa meillä.</li>
+        <br></br>
         <li><p2>Suunnan etsiminen - </p2> Huolehdithan, että sinulla on käytettävissä asiantuntijoita apunasi, kun mietit uusia urasuunnitelmia tai mietit seuraavien askeleiden ottoa. Jäsentemme käytössä ovat muun muassa kokeneet uravalmentajat, johtajasopimuksia jatkuvasti tekevät juristit ja erilaisia työnhakua tukevia palveluita.</li>
+        <br></br>
         <li><p2>Ymmärrys kehityksestä - </p2> Huolehdithan, että kehität itseäsi myös valmistumisen jälkeen ja pysyt silloin kehityksen kärryillä. Tarjoamme jäsenillemme niin koulutuksia ja sisältöjä itsensä kehittämiseen. Lisäksi saat kaupallisen alan digi- ja printtilehtiä jopa 70 % alennuksella.</li>
       </ul>;
       } else if (index === 3) {
         return <ul>
         <li><p2>Verkostot ja yhteisö - </p2>Huolehdithan, että sinulla on verkostoja erilaisiin tahoihin yrittäjänä ollesasi. Toimintamme kautta pääset tutustumaan potentiaalisiin rekryihin, asiakkaisiin ja mukaviin ihmisiin. Paikallisverkostojamme on ympäri Suomen.</li>
+        <br></br>
         <li><p2>Alan arvostuksen kehittäminen - </p2> Huolehdithan siitä, että kauppatieteellinen ala kehittyy mieleiseesi suuntaan. Jäsenenämme olet kehittämässä alan opetusta ja käytänteitä. Teemme muun muassa yliopistoissa edunvalvontaa opiskelijayhdistysten kautta ja valtakunnallisesti montaa eri reittiä. Lisäksi tuotamme yliopistoille muun muassa vastavalmistuneiden palautekyselyä.</li>
+        <br></br>
         <li><p2>Ekonomiyrittäjien tukeminen - </p2>Olethan mukana tukemassa uusia ekonomiyrittäjiä. Tarjoamme uusille ekonomiyrittäjille neuvontaa. Jäsenyydellämme saat myös Suomen Yrittäjien palvelupaketin.</li>
       </ul>;
       } else if (index === 4) {
         return <ul>
         <li><p2>Verkostot ja yhteisö - </p2>Huolehdithan, että sinulla on verkostoja erilaisiin tahoihin myös eläkkeelläsi ollesasi. Toimintamme kautta pääset olemaan osa valloittavaa yhteisöämme.</li>
+        <br></br>
         <li><p2>Tue alan arvostuksen nostamista - </p2>Olethan mukana varmistamassa, että kauppatieteellisen koulutuksen osaajia ja osaamista arvostetaan yhteiskunnassa myös tulevaisuudessa. Teemme jatkuvasti niin vaikuttamistyötä kuin mediatyötäkin kauppatieteellisen alan arvostuksen edistämiseksi.</li>
+        <br></br>
         <li><p2>Rahan arvoiset jäsenedut  - </p2>Varmistathan, että saat rahanarvoisia etuja myös eläkkeellä ollessasi. Jäsenemämme saatu puoleen hintaan samat edut kuin työssäkäyvät jäsenemme.</li>
       </ul>;
       }
@@ -648,19 +690,25 @@ setArvoAsema(arvoAsema);
       if (index === 0) {
         return <ul>
         <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa - </p2>  Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Uravalmentajillamme on erinomainen käsitys ekonomien palkoista ja palkkakehityksestä.</li>
+        <br></br>
         <li><p2>Henkilökohtaista juridista neuvontaa </p2>työelämään liittyvissä asioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen.</li>
+        <br></br>
         <li><p2>Verkostoitumispalvelu - </p2>Löydät palvelusta helposti uusia tuttavuuksia, jotka jakavat esimerkiksi samat ammatillisen kiinnostuksen kohteet kuin sinä. Voit myös laajentaa osaamistasi uusille alueille verkostoitumalla sellaisten ihmisten kanssa, joilla on osaamista, jota sinä esimerkiksi haluaisit hankkia.</li>
       </ul>;
       } else if (index === 1) {
         return <ul>
         <li><p2>Henkilökohtaista juridista neuvontaa </p2>työelämän lakiasioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+        <br></br>
         <li><p2>Ammatilliset live- tapahtumat - </p2>Suomen Ekonomit tarjoaa jäsenilleen jatkuvia kehittymismahdollisuuksia erilaisten koulutusten ja tapahtumien avulla.</li>
+        <br></br>
         <li><p2>Suomen laajuiset Member+ edut - </p2>Palveluun on kerätty ajankohtaisia etuja ja palveluita, mm. mökkeilyyn, matkailuun, vapaa-aikaan ja hyvinvointiin liittyen.</li>
       </ul>;
       } else if (index === 2) {
         return <ul>
         <li><p2>Henkilökohtaista juridista neuvontaa </p2>työelämän lakiasioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+        <br></br>
         <li><p2>Ammatillinen verkostoituminen - </p2>Jäsenenä voit osallistua tapahtumiin, joissa tapaat kollegoitasi eri toimialoilta. Tällaiset verkostot voivat tarjota mahdollisuuksia oppia uutta, vaihtaa ajatuksia ja jakaa parhaita käytäntöjä. </li>
+        <br></br>
         <li><p2>Edunvalvonta ja vaikuttaminen - </p2>ajamme aktiivisesti johtajien etuja työmarkkinoilla. Seuraamme työmarkkinoiden kehitystä, työehtoja ja palkkauksen tasoa. Jäsenenä voit hyötyä liiton tarjoamista neuvontapalveluista työsuhdeasioissa ja työehtosopimuksiin liittyvissä kysymyksissä. Lisäksi voit osallistua  vaikuttamistyöhön ja olla mukana muokkaamassa talousalan toimintaympäristöä.</li>
       </ul>;
       } else if (index === 3) {
@@ -674,19 +722,25 @@ setArvoAsema(arvoAsema);
       if (index === 0) {
         return <ul>
         <li><p2>Oikeudellinen turva - </p2>Huolehdithan, että sinulla on riittävän tasoinen oikeudellinen turva työelämän ongelmatilanteiteita varten niin nyt kuin tulevaisuudessa. Vakuutusyhtiöt tai työttömyyskassa eivät tarjoa joko lainkaan tai ainakaan samanlaatuista oikeudellista turvaa ekonomeille. Jäsenyysvuotesi kerryttävät turvaa meillä. Tilanteesi voi nopeasti vaihtua ja sen takia on hyvä varautua jo etukäteen.</li>
+        <br></br>
         <li><p2>Palkankorotukset - </p2>Huolehdithan, että sinulla on ekonomien palkkauksen asiantuntijoita ja tutkittua tietoa tukenasi palkkaneuvotteluissa ja juristeja tarkistamassa työsopimuksiasi, jotta saat ansaitsemasi arvoista palkkaa ja työelämää. Neuvottelemme myös yleisiä ja yrityskohtaisia työehtosopimuksia, jotka varmistavat palkan kehittymisen, vaikka työtehtävät eivät muuttuisikaan.</li>
+        <br></br>
         <li><p2>Yhteisö ja verkosto - </p2>Huolehdithan itsesi kehittämisestä ja mielekkäistä kohtaamisistasi työyhteisösi ulkopuolella. Ekonomiyhteisö tarjoaa monenmoista ohjelmaa ja sisältöä elämään. Tarjoamme niin itsensä kehittämiseen tukea. Paikallisyhdistyksemme järjestävät lisäksi monenmoista vapaa-ajan asiapitoisempaa ja vapaampaa aktiviteettia.</li>
       </ul>;
       } else if (index === 1) {
         return <ul>
         <li><p2>Oikeudellinen turva - </p2>Huolehdithan, että sinulla on riittävän tasoinen oikeudellinen turva työelämän ongelmatilanteiteita varten niin nyt kuin tulevaisuudessa. Vakuutusyhtiöt tai työttömyyskassa eivät tarjoa joko lainkaan tai ainakaan samanlaatuista oikeudellista turvaa ekonomeille. Jäsenyysvuotesi kerryttävät turvaa meillä. Tilanteesi voi nopeasti vaihtua ja sen takia on hyvä varautua jo etukäteen.</li>
+        <br></br>
         <li><p2>Palkankorotukset - </p2>Huolehdithan, että sinulla on ekonomien palkkauksen asiantuntijoita ja tutkittua tietoa tukenasi palkkaneuvotteluissa ja juristeja tarkistamassa työsopimuksiasi, jotta saat ansaitsemasi arvoista palkkaa ja työelämää. Neuvottelemme myös yleisiä ja yrityskohtaisia työehtosopimuksia, jotka varmistavat palkan kehittymisen, vaikka työtehtävät eivät muuttuisikaan.</li>
+        <br></br>
         <li><p2>Esimieskoulutukset ja sisällöt - </p2>Huolehdithan niin uutena kuin pidempääkin toimineena esimiehenä osaamisesi kehittämisesti. Tarjoamme monenmoista sisältöä ja koulutuksia esimiehenä toimiville jäsenillemme.</li>
       </ul>;
       } else if (index === 2) {
         return  <ul>
         <li><p2>Oikeudellinen turva - </p2>Huolehdithan, että sinulla on riittävän tasoinen oikeudellinen turva työelämän ongelmatilanteiteita varten niin nyt kuin tulevaisuudessa. Vakuutusyhtiöt tai työttömyyskassa eivät tarjoa joko lainkaan tai ainakaan samanlaatuista oikeudellista turvaa ekonomeille. Jäsenyysvuotesi kerryttävät turvaa meillä. Tilanteesi voi nopeasti vaihtua ja sen takia on hyvä varautua jo etukäteen.</li>
+        <br></br>
         <li><p2>Johtajasopimukset - </p2>Varmistathan, että sinulla on johtajasopimuksia laadittaessa asiantuntevat juristit apunasi tarkistamassa sopimuksia. Voit saada mittavia rahallisia hyötyjä, mikäli osaat neuvotella palkkaukseen ja muihin työehtoihin liittyvät sopimukset oikein.</li>
+        <br></br>
         <li><p2>Työnantajaneuvonta - </p2>Huolehdithan, että voit tarvittaessa kysyä vaikeista työnantajan kysymyksistä asiantuntevilta juristeilta. Tarjoamme työnantajan edustajana toimiville jäsenillemme myös työnantajaneuvontaa, jossa autamme vaikeiden juridisten tilanteiden ratkaisussa.</li>
       </ul>;
       } else if (index === 3) {
@@ -702,35 +756,34 @@ setArvoAsema(arvoAsema);
     <div className="App">
       <div className="box-yhteenveto-alku">
          <div className="box-yhteenveto-alku-otsikko">
-          <h2>Jäsenen hyödyt</h2>
+          <h1>Jäsenen hyödyt</h1>
           <WordCarousel />
          </div>
           <div className="box-yhteenveto-alku-kuva">
-          <img style={{ width: '100%' }} src={ryhmaImage} alt="ryhma" />
+          <img style= {{ width: '100%' }} src= {ryhmaImage} alt="ryhma" />
         </div>
      </div>
 
-      <div className="box-yhteenveto-alku-teksti">
-      <div className="box-yhteenveto-alku-raha">
-      <h3>Etu luokka</h3>
-      <h3>Rahallinen hyöty</h3>
-      </div>
-      <div className='box-yhteenveto-alaotsikko-raha'>
-      <h4>
-      <ExpendableButton isOpen={showMoreTextKaikki1} toggle={handleShowMoreClickKaikki1} />
+     <div className="box-yhteenveto-alku-teksti">
+          <div className="box-yhteenveto-alku-raha">
+          <h3>Jatkuvat hyödyt</h3>
+          </div>
+          <div class="paataso-container">
+          <div className='box-yhteenveto-alaotsikko-raha'>
+      <h3>
+      <ExpendableButton isOpen= {showMoreTextKaikki1} toggle= {handleShowMoreClickKaikki1} />
       Yhteisö ja verkosto
-      </h4>
-      ={priceYhteisoJaVerkosto}€
+      </h3>
       </div>
       {showMoreTextKaikki1 && (
         <div>
           <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikkiAla1} toggle={handleShowMoreClickKaikkiAla1} showMaterialSymbol={false} />Paikallisyhdistykset ja kerhot</span>
-            <label>{selectedProducts[0].price}€
+            <span><ExpendableButton isOpen= {showMoreTextKaikkiAla1} toggle= {handleShowMoreClickKaikkiAla1} showMaterialSymbol= {false} />Paikallisyhdistykset ja kerhot</span>
+            <label>
             <input
               type="checkbox" id="check"
-              checked={selectedProducts[0].selected}
-              onChange={() => handleProductToggle(selectedProducts[0].id)}
+              checked= {selectedProducts[0].selected}
+              onChange= {() => handleProductToggle(selectedProducts[0].id)}
             />
           </label>
           </div>
@@ -740,12 +793,12 @@ setArvoAsema(arvoAsema);
               </ul>
             )}
             <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikkiAla2} toggle={handleShowMoreClickKaikkiAla2} showMaterialSymbol={false} />Toimikunnat</span>
-            <label>{selectedProducts[1].price}€
+            <span><ExpendableButton isOpen= {showMoreTextKaikkiAla2} toggle= {handleShowMoreClickKaikkiAla2} showMaterialSymbol= {false} />Toimikunnat</span>
+            <label>
             <input
               type="checkbox" id="check"
-              checked={selectedProducts[1].selected}
-              onChange={() => handleProductToggle(selectedProducts[1].id)}
+              checked= {selectedProducts[1].selected}
+              onChange= {() => handleProductToggle(selectedProducts[1].id)}
             />
           </label>
           </div>
@@ -755,12 +808,12 @@ setArvoAsema(arvoAsema);
               </ul>
             )}
           <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikkiAla3} toggle={handleShowMoreClickKaikkiAla3} showMaterialSymbol={false} />Opiskelijajärjestöt ja kerhot</span>
-            <label>{selectedProducts[2].price}€
+            <span><ExpendableButton isOpen= {showMoreTextKaikkiAla3} toggle= {handleShowMoreClickKaikkiAla3} showMaterialSymbol= {false} />Opiskelijajärjestöt ja kerhot</span>
+            <label>
             <input
               type="checkbox" id="check"
-              checked={selectedProducts[2].selected}
-              onChange={() => handleProductToggle(selectedProducts[2].id)}
+              checked= {selectedProducts[2].selected}
+              onChange= {() => handleProductToggle(selectedProducts[2].id)}
             />
           </label>
           </div>
@@ -770,12 +823,12 @@ setArvoAsema(arvoAsema);
               </ul>
             )}
           <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikkiAla4} toggle={handleShowMoreClickKaikkiAla4} showMaterialSymbol={false} />Verkostoitumispalvelu</span>
-            <label>{selectedProducts[3].price}€
+            <span><ExpendableButton isOpen= {showMoreTextKaikkiAla4} toggle= {handleShowMoreClickKaikkiAla4} showMaterialSymbol= {false} />Verkostoitumispalvelu</span>
+            <label>
             <input
               type="checkbox" id="check"
-              checked={selectedProducts[3].selected}
-              onChange={() => handleProductToggle(selectedProducts[3].id)}
+              checked= {selectedProducts[3].selected}
+              onChange= {() => handleProductToggle(selectedProducts[3].id)}
             />
           </label>
           </div>
@@ -785,370 +838,24 @@ setArvoAsema(arvoAsema);
               </ul>
             )}
           </div>
-      )}
+      )} </div>
 
-     <div class="paataso-container">
-     <div className='box-yhteenveto-alaotsikko-raha'>
-      <h4>
-      <ExpendableButton isOpen={showMoreTextKaikki2} toggle={handleShowMoreClickKaikki2} />
-      Tapahtumat
-      </h4>
-      ={priceTapahtumat}€
-      </div>
-      {showMoreTextKaikki2 && (
-        <div>
-          <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki2Ala1} toggle={handleShowMoreClickKaikki2Ala1} showMaterialSymbol={false} />Ammatilliset live tapahtumat</span>
-            <label>{selectedProducts[4].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[4].selected}
-              onChange={() => handleProductToggle(selectedProducts[4].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki2Ala1 && (
-              <ul>
-                <li>Suomen Ekonomit tarjoaa jäsenilleen jatkuvia kehittymismahdollisuuksia erilaisten koulutusten ja tapahtumien avulla. </li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki2Ala2} toggle={handleShowMoreClickKaikki2Ala2} showMaterialSymbol={false} />Verkkotapahtumat</span>
-            <label>{selectedProducts[5].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[5].selected}
-              onChange={() => handleProductToggle(selectedProducts[5].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki2Ala2 && (
-              <ul>
-                <li>Tarjoamme jäsenillemme monipuolisia verkkotapahtumia ja valmennuksia. Löydät myös aikasiemmat tapahtumamme webinaarikirjastostamme.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki2Ala3} toggle={handleShowMoreClickKaikki2Ala3} showMaterialSymbol={false} />Hupitapahtumat</span>
-            <label>{selectedProducts[6].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[6].selected}
-              onChange={() => handleProductToggle(selectedProducts[6].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki2Ala3 && (
-              <ul>
-                <li>
-                Tarjoamme jäsenillemme myös viihteellisempiä tapahtumia kuten Linnanmäen Heko Heko päivä tai leffa ensi-iltoja. 
-                </li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki2Ala4} toggle={handleShowMoreClickKaikki2Ala4} showMaterialSymbol={false} />Paikallisyhdistyksen tapahtumat</span>
-            <label>{selectedProducts[7].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[7].selected}
-              onChange={() => handleProductToggle(selectedProducts[7].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki2Ala4 && (
-              <ul>
-                <li>
-                Ekonomijäsenet kuuluvat alueellisiin ekonomiyhdistyksiin, jotka tuovat ekonomitoiminnan paikalliselle tasolle ja tarjoavat koulutuksia ja tapahtumia ja voit myös osallistua erilaisten kerhojen toimintaan.                 </li>
-              </ul>
-            )}  <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki2Ala5} toggle={handleShowMoreClickKaikki2Ala5} showMaterialSymbol={false} />Valmennukset</span>
-            <label>{selectedProducts[8].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[8].selected}
-              onChange={() => handleProductToggle(selectedProducts[8].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki2Ala5 && (
-              <ul>
-                <li>
-                Etsitkö parempaa jaksamista, uutta innostusta tai suuntaa urallesi? Haluatko menestyä työnhaussa? Uravalmentajiemme rakentamissa verkkovalmennuksissa kehität itsetuntemusta, opit tunnistamaan omaa osaamistasi ja hankit tässä ajassa olennaisia työnhakutaitoja.
-                </li>
-              </ul>
-            )}  <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki2Ala6} toggle={handleShowMoreClickKaikki2Ala6} showMaterialSymbol={false} />School of sales</span>
-            <label>{selectedProducts[9].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[9].selected}
-              onChange={() => handleProductToggle(selectedProducts[9].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki2Ala6 && (
-              <ul>
-                <li>
-                Suomen Ekonomien ja Kaupan liiton perustaman School of Sales -myyntikoulun missiona on nostaa myynnin osaamista ja arvostusta ja sitä kautta parantaa Suomen kilpailukykyä ja kasvun edellytyksiä.
-                </li>
-              </ul>
-            )}
-          </div>
-
-      )}
-      </div>
-      <div class="paataso-container">
+<div class="paataso-container">
       <div className='box-yhteenveto-alaotsikko-raha'>
-      <h4>
-      <ExpendableButton isOpen={showMoreTextKaikki3} toggle={handleShowMoreClickKaikki3} />
-      Urapalvelut
-      </h4>
-      ={priceUrapalvelut}€
-      </div>
-      {showMoreTextKaikki3 && (
-        <div>
-          <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki3Ala1} toggle={handleShowMoreClickKaikki3Ala1} showMaterialSymbol={false} />Uravalmennus</span>
-            <label>{selectedProducts[10].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[10].selected}
-              onChange={() => handleProductToggle(selectedProducts[10].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki3Ala1 && (
-              <ul>
-                <li> Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun ja työhyvinvointiin.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki3Ala2} toggle={handleShowMoreClickKaikki3Ala2} showMaterialSymbol={false} />CV:n ja hakemuksen täsmäsparraus</span>
-            <label>{selectedProducts[11].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[11].selected}
-              onChange={() => handleProductToggle(selectedProducts[11].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki3Ala2 && (
-              <ul>
-                <li>CV:n ja hakemuksen kertaluontoisessa täsmäsparrauksessa saat vinkit työnhaun asiakirjojesi viimeistelyyn, jotta osaamisesi ja kiinnostuksesi nousevat esiin ja parannat mahdollisuuksia erottua muista työnhakijoista.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki3Ala3} toggle={handleShowMoreClickKaikki3Ala3} showMaterialSymbol={false} />Palkkaneuvonta</span>
-            <label>{selectedProducts[12].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[12].selected}
-              onChange={() => handleProductToggle(selectedProducts[12].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki3Ala3 && (
-              <ul>
-                <li>Meillä on laaja tietämys ekonomien palkoista ja palkkakehityksestä. Uravalmentajamme antavat henkilökohtaista palkkaneuvontaa.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-            <span><ExpendableButton isOpen={showMoreTextKaikki3Ala4} toggle={handleShowMoreClickKaikki3Ala4} showMaterialSymbol={false} />Palkkatutka</span>
-            <label>{selectedProducts[13].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[13].selected}
-              onChange={() => handleProductToggle(selectedProducts[13].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki3Ala4 && (
-              <ul>
-                <li>Palkkatutkan avulla voit haarukoida palkkatasoa muun muassa kokemuksen, paikkakunnan ja toimialan perusteella. Palkkatutkan datana käytetään Suomen Ekonomien tuoreimman palkkatasotutkimuksen tietoja.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki3Ala5} toggle={handleShowMoreClickKaikki3Ala5} showMaterialSymbol={false} />Mentorointi</span>
-            <label>{selectedProducts[14].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[14].selected}
-              onChange={() => handleProductToggle(selectedProducts[14].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki3Ala5 && (
-              <ul>
-                <li>Mentorointi on ammatillisen kehittymisen ohjelma. Se on vuorovaikutukseen perustuvaa yhteistyötä, jonka tavoitteena on edistää aktorin (mentoroitava) ammatillista kasvua ja kehittymistä sekä antaa mentorille mahdollisuus kehittää vuorovaikutustaitojaan, oppia uutta ja kokea auttamisen iloa.</li>
-              </ul>
-            )}
-          </div>
-      )}
-      </div>
-      <div class="paataso-container">
-      <div className='box-yhteenveto-alaotsikko-raha'>
-      <h4>
-      <ExpendableButton isOpen={showMoreTextKaikki4} toggle={handleShowMoreClickKaikki4} />
-      Lakipalvelut      
-      </h4>
-      ={priceLakipalvelut}€
-      </div>
-      {showMoreTextKaikki4 && (
-        <div>
-          <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki4Ala1} toggle={handleShowMoreClickKaikki4Ala1} showMaterialSymbol={false} />Henkilökohtainen lakineuvonta</span>
-            <label>{selectedProducts[15].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[15].selected}
-              onChange={() => handleProductToggle(selectedProducts[15].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki4Ala1 && (
-              <ul>
-                <li>Lakimiehemme tarjoavat puhelinneuvontaa työoikeudellisiin kysymyksiin lähes kaikkina arkipäivinä.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki4Ala2} toggle={handleShowMoreClickKaikki4Ala2} showMaterialSymbol={false} />Johtajasopimukset</span>
-            <label>{selectedProducts[16].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[16].selected}
-              onChange={() => handleProductToggle(selectedProducts[16].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki4Ala2 && (
-              <ul>
-                <li>Kommentoimme työsuhteeseen liittyviä sopimuksia, kuten työsopimuksia ja työsuhteen päättämissopimuksia.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki4Ala3} toggle={handleShowMoreClickKaikki4Ala3} showMaterialSymbol={false} />Hupitapahtumat</span>
-            <label>{selectedProducts[17].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[17].selected}
-              onChange={() => handleProductToggle(selectedProducts[17].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki4Ala3 && (
-              <ul>
-                <li>Kommentoimme johtajasopimuksia ja annamme vinkkejä niiden laadintaan.</li>
-              </ul>
-            )}
-         <div className="box-yhteenveto-alaotsikko-teksti">
-         <span><ExpendableButton isOpen={showMoreTextKaikki4Ala4} toggle={handleShowMoreClickKaikki4Ala4} showMaterialSymbol={false} />Riitaisten työsuhdeasioiden selvittäminen</span>
-            <label>{selectedProducts[18].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[18].selected}
-              onChange={() => handleProductToggle(selectedProducts[18].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki4Ala4 && (
-              <ul>
-                <li>Tarvittaessa juristimme selvittää riitaisia työsuhdeasioita työnantajan kanssa, yleensä ensimmäisenä askeleena ennen mahdollista oikeudenkäyntiä. </li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki4Ala5} toggle={handleShowMoreClickKaikki4Ala5} showMaterialSymbol={false} />Kertyvä oikeusapu riita- tai rikosasiassa</span>
-            <label>{selectedProducts[19].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[19].selected}
-              onChange={() => handleProductToggle(selectedProducts[19].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki4Ala5 && (
-              <ul>
-                <li>Riita- tai rikosasian siirtyessä tuomioistuimen kävsiteltäväksi teemme oikeusapupäätöksen. Korvaamme myös vastapuolen kuluja jäsenvuosien määrän mukaisesti.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki4Ala6} toggle={handleShowMoreClickKaikki4Ala6} showMaterialSymbol={false} />Oppaat</span>
-            <label>{selectedProducts[20].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[20].selected}
-              onChange={() => handleProductToggle(selectedProducts[20].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki4Ala6 && (
-              <ul>
-                <li>Meillä on lukuisia oppaita kilpailukielto-opas, johtajasopimusopas, ulkomaantyön opas.</li>
-              </ul>
-            )}
-                 <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki4Ala7} toggle={handleShowMoreClickKaikki4Ala7} showMaterialSymbol={false} />Sopimusmallit</span>
-            <label>{selectedProducts[21].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[21].selected}
-              onChange={() => handleProductToggle(selectedProducts[21].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki4Ala7 && (
-              <ul>
-                <li>Meillä on mm. toimitusjohtajasopimusmalli ja ohje, toimeksiantosopimus malli.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki4Ala8} toggle={handleShowMoreClickKaikki4Ala8} showMaterialSymbol={false} />Aloittavan yrittäjän neuvonta</span>
-            <label>{selectedProducts[22].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[22].selected}
-              onChange={() => handleProductToggle(selectedProducts[22].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki4Ala8 && (
-              <ul>
-                <li>Yleistä tietoa ja ohjausta seuraavissa asioissa: yrittäjäksi ryhtyminen, asiantuntijan toimeksiantosopimus ja yrityksen osakkaiden välinen osakassopimus.</li>
-              </ul>
-            )}
-          <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki4Ala9} toggle={handleShowMoreClickKaikki4Ala9} showMaterialSymbol={false} />eLakipalvelu</span>
-            <label>{selectedProducts[23].price}€
-            <input
-              type="checkbox" id="check"
-              checked={selectedProducts[23].selected}
-              onChange={() => handleProductToggle(selectedProducts[23].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki4Ala9 && (
-              <ul>
-                <li>eLakipalvelu on helppo tapa saada vastaus nopeasti. Virtuaalinen palvelu esittää sinulle kysymyksiä ja ohjaa näppärästi vastauksen äärelle.</li>
-              </ul>
-            )}
-          </div>
-      )}
-      </div>
-      <div class="paataso-container">
-      <div className='box-yhteenveto-alaotsikko-raha'>
-      <h4>
-      <ExpendableButton isOpen={showMoreTextKaikki5} toggle={handleShowMoreClickKaikki5} />
+      <h3>
+      <ExpendableButton isOpen= {showMoreTextKaikki5} toggle= {handleShowMoreClickKaikki5} />
       Vaikuttamistyö ja edunvalvonta
-      </h4>
-      ={priceVaikuttamistyoJaEdunvalvonta}€
+      </h3>
       </div>
       {showMoreTextKaikki5 && (
         <div>
          <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki5Ala1} toggle={handleShowMoreClickKaikki5Ala1} showMaterialSymbol={false} />Työehtosopimukset</span>
-          <label>{selectedProducts[24].price}€
+          <span><ExpendableButton isOpen= {showMoreTextKaikki5Ala1} toggle= {handleShowMoreClickKaikki5Ala1} showMaterialSymbol= {false} />Työehtosopimukset</span>
+          <label>
             <input
               type="checkbox" id="check"
-              checked={selectedProducts[24].selected}
-              onChange={() => handleProductToggle(selectedProducts[24].id)}
+              checked= {selectedProducts[24].selected}
+              onChange= {() => handleProductToggle(selectedProducts[24].id)}
             />
           </label>
         </div>
@@ -1158,12 +865,12 @@ setArvoAsema(arvoAsema);
           </ul>
         )}
         <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki5Ala2} toggle={handleShowMoreClickKaikki5Ala2} showMaterialSymbol={false} />Koulutukset arvostuksen ylläpito</span>
-          <label>{selectedProducts[25].price}€
+          <span><ExpendableButton isOpen= {showMoreTextKaikki5Ala2} toggle= {handleShowMoreClickKaikki5Ala2} showMaterialSymbol= {false} />Koulutukset arvostuksen ylläpito</span>
+          <label>
             <input
               type="checkbox" id="check"
-              checked={selectedProducts[25].selected}
-              onChange={() => handleProductToggle(selectedProducts[25].id)}
+              checked= {selectedProducts[25].selected}
+              onChange= {() => handleProductToggle(selectedProducts[25].id)}
             />
           </label>
         </div>
@@ -1173,12 +880,12 @@ setArvoAsema(arvoAsema);
           </ul>
         )}
         <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki5Ala3} toggle={handleShowMoreClickKaikki5Ala3} showMaterialSymbol={false} />Lainsäädäntöön vaikuttaminen</span>
-          <label>{selectedProducts[26].price}€
+          <span><ExpendableButton isOpen= {showMoreTextKaikki5Ala3} toggle= {handleShowMoreClickKaikki5Ala3} showMaterialSymbol= {false} />Lainsäädäntöön vaikuttaminen</span>
+          <label>
             <input
               type="checkbox" id="check"
-              checked={selectedProducts[26].selected}
-              onChange={() => handleProductToggle(selectedProducts[26].id)}
+              checked= {selectedProducts[26].selected}
+              onChange= {() => handleProductToggle(selectedProducts[26].id)}
             />
           </label>
         </div>
@@ -1188,12 +895,12 @@ setArvoAsema(arvoAsema);
           </ul>
         )}
         <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki5Ala4} toggle={handleShowMoreClickKaikki5Ala4} showMaterialSymbol={false} />Koulutuksen laatuun vaikuttaminen</span>
-          <label>{selectedProducts[27].price}€
+          <span><ExpendableButton isOpen= {showMoreTextKaikki5Ala4} toggle= {handleShowMoreClickKaikki5Ala4} showMaterialSymbol= {false} />Koulutuksen laatuun vaikuttaminen</span>
+          <label>
             <input
               type="checkbox" id="check"
-              checked={selectedProducts[27].selected}
-              onChange={() => handleProductToggle(selectedProducts[27].id)}
+              checked= {selectedProducts[27].selected}
+              onChange= {() => handleProductToggle(selectedProducts[27].id)}
             />
           </label>
         </div>
@@ -1203,12 +910,12 @@ setArvoAsema(arvoAsema);
           </ul>
         )}
         <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen={showMoreTextKaikki5Ala5} toggle={handleShowMoreClickKaikki5Ala5} showMaterialSymbol={false} />Talousvaikuttaminen</span>
-          <label>{selectedProducts[28].price}€
+          <span><ExpendableButton isOpen= {showMoreTextKaikki5Ala5} toggle= {handleShowMoreClickKaikki5Ala5} showMaterialSymbol= {false} />Talousvaikuttaminen</span>
+          <label>
             <input
               type="checkbox" id="check"
-              checked={selectedProducts[28].selected}
-              onChange={() => handleProductToggle(selectedProducts[28].id)}
+              checked= {selectedProducts[28].selected}
+              onChange= {() => handleProductToggle(selectedProducts[28].id)}
             />
           </label>
         </div>
@@ -1218,28 +925,422 @@ setArvoAsema(arvoAsema);
           </ul>
             )}
           </div>
-      )}
-            </div>
+      )} </div>
+      
+      </div>
+
+
+      <div className="box-yhteenveto-alku-teksti">
+      <div className="box-yhteenveto-alku-raha">
+      <h3>Rahanarvoiset edut</h3>
+      <h3>Rahallinen hyöty per vuosi</h3>
+      </div>
+      
+      <div class="paataso-container">
+     <div className='box-yhteenveto-alaotsikko-raha'>
+      <h3>
+      <ExpendableButton isOpen= {showMoreTextKaikki2} toggle= {handleShowMoreClickKaikki2} />
+      Tapahtumat
+      </h3>
+      <div className='raha-alataso'>= {priceTapahtumat.toLocaleString('fi-FI')} €</div>
+      </div>
+      {showMoreTextKaikki2 && (
+        <div>
+          <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki2Ala1} toggle= {handleShowMoreClickKaikki2Ala1} showMaterialSymbol= {false} />Ammatilliset live tapahtumat</span>
+            <label>{selectedProducts[4].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[4].selected}
+              onChange= {() => handleProductToggle(selectedProducts[4].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki2Ala1 && (
+              <ul>
+                <li>Suomen Ekonomit tarjoaa jäsenilleen jatkuvia kehittymismahdollisuuksia erilaisten koulutusten ja tapahtumien avulla. </li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Keskimääräinen hinta tapahtumalle on 50 €.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki2Ala2} toggle= {handleShowMoreClickKaikki2Ala2} showMaterialSymbol= {false} />Verkkotapahtumat</span>
+            <label>{selectedProducts[5].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[5].selected}
+              onChange= {() => handleProductToggle(selectedProducts[5].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki2Ala2 && (
+              <ul>
+                <li>Tarjoamme jäsenillemme monipuolisia verkkotapahtumia ja valmennuksia. Löydät myös aikasiemmat tapahtumamme webinaarikirjastostamme.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Keskimääräinen hinta tapahtumalle on 50 €.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki2Ala3} toggle= {handleShowMoreClickKaikki2Ala3} showMaterialSymbol= {false} />Hupitapahtumat</span>
+            <label>{selectedProducts[6].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[6].selected}
+              onChange= {() => handleProductToggle(selectedProducts[6].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki2Ala3 && (
+              <ul>
+                <li>
+                Tarjoamme jäsenillemme myös viihteellisempiä tapahtumia kuten Linnanmäen Heko Heko päivä tai leffa ensi-iltoja. 
+                </li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Keskimääräinen hinta tapahtumalle on 50 €.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki2Ala4} toggle= {handleShowMoreClickKaikki2Ala4} showMaterialSymbol= {false} />Paikallisyhdistyksen tapahtumat</span>
+            <label>{selectedProducts[7].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[7].selected}
+              onChange= {() => handleProductToggle(selectedProducts[7].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki2Ala4 && (
+              <ul>
+                <li>
+                Ekonomijäsenet kuuluvat alueellisiin ekonomiyhdistyksiin, jotka tuovat ekonomitoiminnan paikalliselle tasolle ja tarjoavat koulutuksia ja tapahtumia ja voit myös osallistua erilaisten kerhojen toimintaan.                 </li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Keskimääräinen hinta tapahtumalle on 50 €.</li>
+              </ul>
+            )}  <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki2Ala5} toggle= {handleShowMoreClickKaikki2Ala5} showMaterialSymbol= {false} />Valmennukset</span>
+            <label>{selectedProducts[8].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[8].selected}
+              onChange= {() => handleProductToggle(selectedProducts[8].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki2Ala5 && (
+              <ul>
+                <li>
+                Etsitkö parempaa jaksamista, uutta innostusta tai suuntaa urallesi? Haluatko menestyä työnhaussa? Uravalmentajiemme rakentamissa verkkovalmennuksissa kehität itsetuntemusta, opit tunnistamaan omaa osaamistasi ja hankit tässä ajassa olennaisia työnhakutaitoja.
+                </li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Keskimääräinen hinta tapahtumalle on 50 €.</li>
+              </ul>
+            )}  <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki2Ala6} toggle= {handleShowMoreClickKaikki2Ala6} showMaterialSymbol= {false} />School of sales</span>
+            <label>{selectedProducts[9].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[9].selected}
+              onChange= {() => handleProductToggle(selectedProducts[9].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki2Ala6 && (
+              <ul>
+                <li>
+                Suomen Ekonomien ja Kaupan liiton perustaman School of Sales -myyntikoulun missiona on nostaa myynnin osaamista ja arvostusta ja sitä kautta parantaa Suomen kilpailukykyä ja kasvun edellytyksiä.
+                </li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Keskimääräinen hinta tapahtumalle on 50 €.</li>
+              </ul>
+            )}
+          </div>
+
+      )}</div>
+
       <div class="paataso-container">
       <div className='box-yhteenveto-alaotsikko-raha'>
-      <h4>
-      <ExpendableButton isOpen={showMoreTextKaikki6} toggle={handleShowMoreClickKaikki6} />
+      <h3>
+      <ExpendableButton isOpen= {showMoreTextKaikki3} toggle= {handleShowMoreClickKaikki3} />
+      Urapalvelut
+      </h3>
+      <div className='raha-alataso'>= {priceUrapalvelut.toLocaleString('fi-FI')} €</div>
+      </div>
+      {showMoreTextKaikki3 && (
+        <div>
+          <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki3Ala1} toggle= {handleShowMoreClickKaikki3Ala1} showMaterialSymbol= {false} />Uravalmennus</span>
+            <label>{selectedProducts[10].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[10].selected}
+              onChange= {() => handleProductToggle(selectedProducts[10].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki3Ala1 && (
+              <ul>
+                <li> Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun ja työhyvinvointiin.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>150 / tunti. Laskettu siten, että käytät kerran 3 vuodessa.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki3Ala2} toggle= {handleShowMoreClickKaikki3Ala2} showMaterialSymbol= {false} />CV:n ja hakemuksen täsmäsparraus</span>
+            <label>{selectedProducts[11].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[11].selected}
+              onChange= {() => handleProductToggle(selectedProducts[11].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki3Ala2 && (
+              <ul>
+                <li>CV:n ja hakemuksen kertaluontoisessa täsmäsparrauksessa saat vinkit työnhaun asiakirjojesi viimeistelyyn, jotta osaamisesi ja kiinnostuksesi nousevat esiin ja parannat mahdollisuuksia erottua muista työnhakijoista.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>150€ / tunti. Laskettu siten, että käytät kerran 5 vuodessa.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki3Ala3} toggle= {handleShowMoreClickKaikki3Ala3} showMaterialSymbol= {false} />Palkkaneuvonta</span>
+            <label>{selectedProducts[12].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[12].selected}
+              onChange= {() => handleProductToggle(selectedProducts[12].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki3Ala3 && (
+              <ul>
+                <li>Meillä on laaja tietämys ekonomien palkoista ja palkkakehityksestä. Uravalmentajamme antavat henkilökohtaista palkkaneuvontaa.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>150 € / tunti. Laskettu siten, että käytät kerran 5 vuodessa.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+            <span><ExpendableButton isOpen= {showMoreTextKaikki3Ala4} toggle= {handleShowMoreClickKaikki3Ala4} showMaterialSymbol= {false} />Palkkatutka</span>
+            <label>{selectedProducts[13].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[13].selected}
+              onChange= {() => handleProductToggle(selectedProducts[13].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki3Ala4 && (
+              <ul>
+                <li>Palkkatutkan avulla voit haarukoida palkkatasoa muun muassa kokemuksen, paikkakunnan ja toimialan perusteella. Palkkatutkan datana käytetään Suomen Ekonomien tuoreimman palkkatasotutkimuksen tietoja.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Ei vastaavaa vapailla markkinoilla. .</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+          <span><ExpendableButton isOpen= {showMoreTextKaikki3Ala5} toggle= {handleShowMoreClickKaikki3Ala5} showMaterialSymbol= {false} />Mentorointi</span>
+            <label>{selectedProducts[14].price.toLocaleString('fi-FI')} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[14].selected}
+              onChange= {() => handleProductToggle(selectedProducts[14].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki3Ala5 && (
+              <ul>
+                <li>Mentorointi on ammatillisen kehittymisen ohjelma. Se on vuorovaikutukseen perustuvaa yhteistyötä, jonka tavoitteena on edistää aktorin (mentoroitava) ammatillista kasvua ja kehittymistä sekä antaa mentorille mahdollisuus kehittää vuorovaikutustaitojaan, oppia uutta ja kokea auttamisen iloa.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Mentorointiohjelmat yleensä maksavat noin 2 000 €.</li>
+              </ul>
+            )}
+          </div>
+      )}
+      </div>
+      <div class="paataso-container">
+      <div className='box-yhteenveto-alaotsikko-raha'>
+      <h3>
+      <ExpendableButton isOpen= {showMoreTextKaikki4} toggle= {handleShowMoreClickKaikki4} />
+      Lakipalvelut      
+      </h3>
+      <div className='raha-alataso'>= {priceLakipalvelut.toLocaleString('fi-FI')} €</div>
+      </div>
+      {showMoreTextKaikki4 && (
+        <div>
+          <div className="box-yhteenveto-alaotsikko-teksti">
+          <span><ExpendableButton isOpen= {showMoreTextKaikki4Ala1} toggle= {handleShowMoreClickKaikki4Ala1} showMaterialSymbol= {false} />Henkilökohtainen lakineuvonta</span>
+            <label>{selectedProducts[15].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[15].selected}
+              onChange= {() => handleProductToggle(selectedProducts[15].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki4Ala1 && (
+              <ul>
+                <li>Lakimiehemme tarjoavat puhelinneuvontaa työoikeudellisiin kysymyksiin lähes kaikkina arkipäivinä.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Tuntihinta on 300 €. Laskettu siten, että käytät kerran kolmessa vuodessa.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+          <span><ExpendableButton isOpen= {showMoreTextKaikki4Ala2} toggle= {handleShowMoreClickKaikki4Ala2} showMaterialSymbol= {false} />Johtajasopimukset</span>
+            <label>{selectedProducts[16].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[16].selected}
+              onChange= {() => handleProductToggle(selectedProducts[16].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki4Ala2 && (
+              <ul>
+                <li>Kommentoimme työsuhteeseen liittyviä sopimuksia, kuten työsopimuksia ja työsuhteen päättämissopimuksia.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>500 € / tunti. Laskettu siten, että käytä kerran kymmenessä vuodessa ja aikaa kuluu 2 tuntia.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+          <span><ExpendableButton isOpen= {showMoreTextKaikki4Ala3} toggle= {handleShowMoreClickKaikki4Ala3} showMaterialSymbol= {false} />Työsopimuskommentointi</span>
+            <label>{selectedProducts[17].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[17].selected}
+              onChange= {() => handleProductToggle(selectedProducts[17].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki4Ala3 && (
+              <ul>
+                <li>Kommentoimme johtajasopimuksia ja annamme vinkkejä niiden laadintaan.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>500 € / tunti. Laskettu siten, että käytät kerran viidessä vuodessa. </li>
+              </ul>
+            )}
+         <div className="box-yhteenveto-alaotsikko-teksti">
+         <span><ExpendableButton isOpen= {showMoreTextKaikki4Ala4} toggle= {handleShowMoreClickKaikki4Ala4} showMaterialSymbol= {false} />Riitaisten työsuhdeasioiden selvittäminen</span>
+            <label>{selectedProducts[18].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[18].selected}
+              onChange= {() => handleProductToggle(selectedProducts[18].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki4Ala4 && (
+              <ul>
+                <li>Tarvittaessa juristimme selvittää riitaisia työsuhdeasioita työnantajan kanssa, yleensä ensimmäisenä askeleena ennen mahdollista oikeudenkäyntiä. </li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Tuntihinta on 300 €. Laskettu siten, että käytät kerran kymmenessä vuodessa.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+          <span><ExpendableButton isOpen= {showMoreTextKaikki4Ala5} toggle= {handleShowMoreClickKaikki4Ala5} showMaterialSymbol= {false} />Kertyvä oikeusapu riita- tai rikosasiassa</span>
+            <label>{selectedProducts[19].price.toLocaleString('fi-FI')} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[19].selected}
+              onChange= {() => handleProductToggle(selectedProducts[19].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki4Ala5 && (
+              <ul>
+                <li>Riita- tai rikosasian siirtyessä tuomioistuimen kävsiteltäväksi teemme oikeusapupäätöksen. Korvaamme myös vastapuolen kuluja jäsenvuosien määrän mukaisesti.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Riita tai rikosasian selvittely käräjäoikeudessa kustantaa yleensä noin 50 000€. Laskettu, että tapahtuu kerran 40 vuoden työuralla.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+          <span><ExpendableButton isOpen= {showMoreTextKaikki4Ala6} toggle= {handleShowMoreClickKaikki4Ala6} showMaterialSymbol= {false} />Oppaat</span>
+            <label>{selectedProducts[20].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[20].selected}
+              onChange= {() => handleProductToggle(selectedProducts[20].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki4Ala6 && (
+              <ul>
+                <li>Meillä on lukuisia oppaita kilpailukielto-opas, johtajasopimusopas, ulkomaantyön opas.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Oppaan hinnat keskimäärin noin 50 €. Laskettu, että käytät kerran kahdessa vuodessa yhtä opasta.</li>
+              </ul>
+            )}
+                 <div className="box-yhteenveto-alaotsikko-teksti">
+          <span><ExpendableButton isOpen= {showMoreTextKaikki4Ala7} toggle= {handleShowMoreClickKaikki4Ala7} showMaterialSymbol= {false} />Sopimusmallit</span>
+            <label>{selectedProducts[21].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[21].selected}
+              onChange= {() => handleProductToggle(selectedProducts[21].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki4Ala7 && (
+              <ul>
+                <li>Meillä on mm. toimitusjohtajasopimusmalli ja ohje, toimeksiantosopimus malli.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Esimerkiksi ohtajasopimus-malli  2500 € ostettuna. Laskettu siten, että käytät kerran 5 vuodessa.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+          <span><ExpendableButton isOpen= {showMoreTextKaikki4Ala8} toggle= {handleShowMoreClickKaikki4Ala8} showMaterialSymbol= {false} />Aloittavan yrittäjän neuvonta</span>
+            <label>{selectedProducts[22].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[22].selected}
+              onChange= {() => handleProductToggle(selectedProducts[22].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki4Ala8 && (
+              <ul>
+                <li>Yleistä tietoa ja ohjausta seuraavissa asioissa: yrittäjäksi ryhtyminen, asiantuntijan toimeksiantosopimus ja yrityksen osakkaiden välinen osakassopimus.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Tuntihinta on 300 €. Laskettu siten, että käytät kerran 40 vuoden työuralla.</li>
+              </ul>
+            )}
+          <div className="box-yhteenveto-alaotsikko-teksti">
+          <span><ExpendableButton isOpen= {showMoreTextKaikki4Ala9} toggle= {handleShowMoreClickKaikki4Ala9} showMaterialSymbol= {false} />eLakipalvelu</span>
+            <label>{selectedProducts[23].price} €
+            <input
+              type="checkbox" id="check"
+              checked= {selectedProducts[23].selected}
+              onChange= {() => handleProductToggle(selectedProducts[23].id)}
+            />
+          </label>
+          </div>
+            {showMoreTextKaikki4Ala9 && (
+              <ul>
+                <li>eLakipalvelu on helppo tapa saada vastaus nopeasti. Virtuaalinen palvelu esittää sinulle kysymyksiä ja ohjaa näppärästi vastauksen äärelle.</li>
+                <br></br>
+                <li style={{ fontStyle: 'italic' }}>Hinta vapailta markkinoilta noin 40 € per vuosi. Laskettu, että käytät kerran kahdessa vuodessa.</li>
+              </ul>
+            )}
+          </div>
+      )}
+      </div>
+      <div class="paataso-container">
+      <div className='box-yhteenveto-alaotsikko-raha'>
+      <h3>
+      <ExpendableButton isOpen= {showMoreTextKaikki6} toggle= {handleShowMoreClickKaikki6} />
       Jäsenedut
-      </h4>
-      ={priceJasenedut}€
+      </h3>
+      <div className='raha-alataso'>= {priceJasenedut.toLocaleString('fi-FI')} €</div>
       </div>
       {showMoreTextKaikki6 && (
         <div>
           <div className="box-yhteenveto-alaotsikko-teksti">
             <span>
-              <ExpendableButton isOpen={showMoreTextKaikki6Ala1} toggle={handleShowMoreClickKaikki6Ala1} showMaterialSymbol={false} />
+              <ExpendableButton isOpen= {showMoreTextKaikki6Ala1} toggle= {handleShowMoreClickKaikki6Ala1} showMaterialSymbol= {false} />
               Danske Bank asuntolainaetu
             </span>
-            <label>{selectedProducts[29].price}€
+            <label>{selectedProducts[29].price.toLocaleString('fi-FI')} €
               <input
                 type="checkbox" id="check"
-                checked={selectedProducts[29].selected}
-                onChange={() => handleProductToggle(selectedProducts[29].id)}
+                checked= {selectedProducts[29].selected}
+                onChange= {() => handleProductToggle(selectedProducts[29].id)}
               />
             </label>
           </div>
@@ -1251,14 +1352,14 @@ setArvoAsema(arvoAsema);
           
           <div className="box-yhteenveto-alaotsikko-teksti">
             <span>
-              <ExpendableButton isOpen={showMoreTextKaikki6Ala2} toggle={handleShowMoreClickKaikki6Ala2} showMaterialSymbol={false} />
+              <ExpendableButton isOpen= {showMoreTextKaikki6Ala2} toggle= {handleShowMoreClickKaikki6Ala2} showMaterialSymbol= {false} />
               Danske Bank vastavalmistuneen edut
             </span>
-            <label>{selectedProducts[30].price}€
+            <label>{selectedProducts[30].price} €
               <input
                 type="checkbox" id="check"
-                checked={selectedProducts[30].selected}
-                onChange={() => handleProductToggle(selectedProducts[30].id)}
+                checked= {selectedProducts[30].selected}
+                onChange= {() => handleProductToggle(selectedProducts[30].id)}
               />
             </label>
           </div>
@@ -1270,14 +1371,14 @@ setArvoAsema(arvoAsema);
           
           <div className="box-yhteenveto-alaotsikko-teksti">
             <span>
-              <ExpendableButton isOpen={showMoreTextKaikki6Ala3} toggle={handleShowMoreClickKaikki6Ala3} showMaterialSymbol={false} />
+              <ExpendableButton isOpen= {showMoreTextKaikki6Ala3} toggle= {handleShowMoreClickKaikki6Ala3} showMaterialSymbol= {false} />
               Danske Bank sijoittamisen edut
             </span>
-            <label>{selectedProducts[31].price}€
+            <label>{selectedProducts[31].price} €
               <input
                 type="checkbox" id="check"
-                checked={selectedProducts[31].selected}
-                onChange={() => handleProductToggle(selectedProducts[31].id)}
+                checked= {selectedProducts[31].selected}
+                onChange= {() => handleProductToggle(selectedProducts[31].id)}
               />
             </label>
           </div>
@@ -1289,14 +1390,14 @@ setArvoAsema(arvoAsema);
           
           <div className="box-yhteenveto-alaotsikko-teksti">
             <span>
-              <ExpendableButton isOpen={showMoreTextKaikki6Ala4} toggle={handleShowMoreClickKaikki6Ala4} showMaterialSymbol={false} />
+              <ExpendableButton isOpen= {showMoreTextKaikki6Ala4} toggle= {handleShowMoreClickKaikki6Ala4} showMaterialSymbol= {false} />
               Primus henkivakuutus
             </span>
-            <label>{selectedProducts[32].price}€
+            <label>{selectedProducts[32].price} €
               <input
                 type="checkbox" id="check"
-                checked={selectedProducts[32].selected}
-                onChange={() => handleProductToggle(selectedProducts[32].id)}
+                checked= {selectedProducts[32].selected}
+                onChange= {() => handleProductToggle(selectedProducts[32].id)}
               />
             </label>
           </div>
@@ -1308,14 +1409,14 @@ setArvoAsema(arvoAsema);
           
           <div className="box-yhteenveto-alaotsikko-teksti">
             <span>
-              <ExpendableButton isOpen={showMoreTextKaikki6Ala5} toggle={handleShowMoreClickKaikki6Ala5} showMaterialSymbol={false} />
+              <ExpendableButton isOpen= {showMoreTextKaikki6Ala5} toggle= {handleShowMoreClickKaikki6Ala5} showMaterialSymbol= {false} />
               Palkkio +
             </span>
-            <label>{selectedProducts[33].price}€
+            <label>{selectedProducts[33].price.toLocaleString('fi-FI')} €
               <input
                 type="checkbox" id="check"
-                checked={selectedProducts[33].selected}
-                onChange={() => handleProductToggle(selectedProducts[33].id)}
+                checked= {selectedProducts[33].selected}
+                onChange= {() => handleProductToggle(selectedProducts[33].id)}
               />
             </label>
           </div>
@@ -1327,14 +1428,14 @@ setArvoAsema(arvoAsema);
           
           <div className="box-yhteenveto-alaotsikko-teksti">
             <span>
-              <ExpendableButton isOpen={showMoreTextKaikki6Ala6} toggle={handleShowMoreClickKaikki6Ala6} showMaterialSymbol={false} />
+              <ExpendableButton isOpen= {showMoreTextKaikki6Ala6} toggle= {handleShowMoreClickKaikki6Ala6} showMaterialSymbol= {false} />
               Lehtietu
             </span>
-            <label>{selectedProducts[34].price}€
+            <label>{selectedProducts[34].price} €
               <input
                 type="checkbox" id="check"
-                checked={selectedProducts[34].selected}
-                onChange={() => handleProductToggle(selectedProducts[34].id)}
+                checked= {selectedProducts[34].selected}
+                onChange= {() => handleProductToggle(selectedProducts[34].id)}
               />
             </label>
           </div>
@@ -1346,14 +1447,14 @@ setArvoAsema(arvoAsema);
           
           <div className="box-yhteenveto-alaotsikko-teksti">
             <span>
-              <ExpendableButton isOpen={showMoreTextKaikki6Ala7} toggle={handleShowMoreClickKaikki6Ala7} showMaterialSymbol={false} />
+              <ExpendableButton isOpen= {showMoreTextKaikki6Ala7} toggle= {handleShowMoreClickKaikki6Ala7} showMaterialSymbol= {false} />
               HBL Digital
             </span>
-            <label>{selectedProducts[35].price}€
+            <label>{selectedProducts[35].price} €
               <input
                 type="checkbox" id="check"
-                checked={selectedProducts[35].selected}
-                onChange={() => handleProductToggle(selectedProducts[35].id)}
+                checked= {selectedProducts[35].selected}
+                onChange= {() => handleProductToggle(selectedProducts[35].id)}
               />
             </label>
           </div>
@@ -1365,33 +1466,14 @@ setArvoAsema(arvoAsema);
           
           <div className="box-yhteenveto-alaotsikko-teksti">
             <span>
-              <ExpendableButton isOpen={showMoreTextKaikki6Ala8} toggle={handleShowMoreClickKaikki6Ala8} showMaterialSymbol={false} />
-              Opiskelijan lehtietu
-            </span>
-            <label>{selectedProducts[36].price}€
-              <input
-                type="checkbox" id="check"
-                checked={selectedProducts[36].selected}
-                onChange={() => handleProductToggle(selectedProducts[36].id)}
-              />
-            </label>
-          </div>
-          {showMoreTextKaikki6Ala8 && (
-            <ul>
-              <li>Saat joko Kauppalehden tai Talouselämän digitilauksen maksuttomasti lokakuusta toukokuuhun.</li>
-            </ul>
-          )}
-          
-          <div className="box-yhteenveto-alaotsikko-teksti">
-            <span>
-              <ExpendableButton isOpen={showMoreTextKaikki6Ala9} toggle={handleShowMoreClickKaikki6Ala9} showMaterialSymbol={false} />
+              <ExpendableButton isOpen= {showMoreTextKaikki6Ala9} toggle= {handleShowMoreClickKaikki6Ala9} showMaterialSymbol= {false} />
               Member + edut
             </span>
-            <label>{selectedProducts[37].price}€
+            <label>{selectedProducts[37].price} €
               <input
                 type="checkbox" id="check"
-                checked={selectedProducts[37].selected}
-                onChange={() => handleProductToggle(selectedProducts[37].id)}
+                checked= {selectedProducts[37].selected}
+                onChange= {() => handleProductToggle(selectedProducts[37].id)}
               />
             </label>
           </div>
@@ -1403,79 +1485,87 @@ setArvoAsema(arvoAsema);
           </div>
       )}
 
+        </div>
       </div>
-          <div class="paataso-container"></div>
+
+      <div className="box-yhteenveto-raha">
          <div className='yleinen-rahallinen-etu'>
-           <h2>Paljonko jäsenyyden rahallinen arvo on?</h2>
-           <div className="price-wrapper">
-            <ul>
-           <li>Muodostuu kaikista yläpuolella valituista arvoista</li>
-           </ul>
-           <p className="price-value">{calculateTotalPrice()}€</p>
+         <div className="price-wrapper2">
+           <h2>Tämän verran sinä hyödyt:</h2>
+           <div className='raha-alataso'>
+           <p className="price-value">= {calculateTotalPrice().toLocaleString('fi-FI')} €</p>
+           </div>
            </div>
            <h2>Mitä maksat?</h2>
+           <div className='box-list'>
            <div className="price-wrapper">
             <ul>
            <li>Suomen Ekonomit</li>
            </ul>
-           <p className="price-value">189€</p>
+           <p className="price-value">189 €</p>
            </div>
            <div className="price-wrapper">
             <ul>
            <li>Paikallisyhdistys</li>
            </ul>
-           <p className="price-value">0-40€</p>
+           <p className="price-value">0-40 €</p>
            </div>
            <div className="price-wrapper">
             <ul>
            <li>Mahdollinen KOKO-työttömyyskassa maksu</li>
            </ul>
-           <p className="price-value">63€</p>
+           <p className="price-value">63 €</p>
            </div>
-           <h2>Kokonaishyötysi vuoden aikana:</h2>
            <div className="price-wrapper">
             <ul>
-            <li>Yllävalituista arvoista on vähennetty jäsenyyden maksut.</li>
-            </ul>
-           <h4 className="price-value">={calculateTotalPrice()-198-40-63}-{calculateTotalPrice()-198}€</h4>
+           <p4 style={{ fontWeight: 'bold' }}>Jäsenmaksu yhteensä</p4>
+           </ul>
+           <p className="price-value-yhteensä">= 292 €</p>
            </div>
-           <img style={{ width: '30%'}} src={aarrearkkuImage} alt="aarrearkku" />
+           </div>
+           <div className="price-wrapper2">
+           <h2>Kokonaishyötysi vuoden aikana:</h2>
+           <h2 className="price-value">= {(calculateTotalPrice() - 292).toLocaleString('fi-FI')} €</h2>
+           </div>
          </div>
-          </div>
+        <div class="aarrearkku-container">
+        <img style= {{ width: '30%'}} src= {aarrearkkuImage} alt="aarrearkku" />
+        </div>
+         </div>
 
-          <h1>Katso vielä jäsenyyden vinkit ikäsi, elämäntilanteesi ja asematasosi mukaan.</h1>
+          <h1>Katso vielä vinkit ikäsi, elämäntilanteesi ja asemasi mukaan.</h1>
 
-            <h3>Minkä ikäinen olet?</h3>
+       <div className='ala-box-otsikot'><h1>Minkä ikäinen olet?</h1></div>
        <div id="button-container-ika">
         <button
-          className={activeButtonIka === 0 ? 'active' : 'inactive' }
-          onClick={() => handleIkaButtonClick(0)}
+          className= {activeButtonIka === 0 ? 'active' : 'inactive' }
+          onClick= {() => handleIkaButtonClick(0)}
         >
           18-30
         </button>
         <button
-          className={activeButtonIka === 1 ? 'active' : 'inactive'}
-          onClick={() => handleIkaButtonClick(1)}
+          className= {activeButtonIka === 1 ? 'active' : 'inactive'}
+          onClick= {() => handleIkaButtonClick(1)}
         >
           30-40
         </button>
         <button
-          className={activeButtonIka === 2 ? 'active' : 'inactive'}
-          onClick={() => handleIkaButtonClick(2)}
+          className= {activeButtonIka === 2 ? 'active' : 'inactive'}
+          onClick= {() => handleIkaButtonClick(2)}
         >
           40-50
         </button>
         <button
-          className={activeButtonIka === 3 ? 'active' : 'inactive'}
-          onClick={() => handleIkaButtonClick(3)}
+          className= {activeButtonIka === 3 ? 'active' : 'inactive'}
+          onClick= {() => handleIkaButtonClick(3)}
         >
           50-65
         </button>
         <button
-          className={activeButtonIka === 4 ? 'active' : 'inactive'}
-          onClick={() => handleIkaButtonClick(4)}
+          className= {activeButtonIka === 4 ? 'active' : 'inactive'}
+          onClick= {() => handleIkaButtonClick(4)}
         >
-          +65
+        +65
         </button>
       </div>
       {/* Laatikot ja tekstit ikäryhmänapin valinnan alle */}
@@ -1483,49 +1573,41 @@ setArvoAsema(arvoAsema);
           <div className="selection-info-ika">
             <div className="box-hyva">
             <div className='box-peukku'><ThumbUpOffAltIcon/></div>
-              <h4>Jäsenen top 3 nostot ikäryhmälle {arvoIka}:</h4>
-              <p>{getIkaTeksti1(activeButtonIka)}<br/></p>
+              <h2>Jäsenen top 3 nostot ikäryhmälle {arvoIka}:</h2>
+              <div className='box-list'>
+               <p>{getIkaTeksti1(activeButtonIka)}<br/></p>
+               </div>
             </div>
             <div className="box-huono">
             <div className='box-peukku'><ThumbDownOffAltIcon/></div>
-              <h4>Ei jäsenen vinkit</h4>
+              <h2>Ei jäsenen vinkit</h2>
+              <div className='box-list'>
               <p>{getIkaTeksti2(activeButtonIka)}<br/></p>
+              </div>
             </div>
           </div>
         )}
 
 
-      <h3>Pääasiallinen toiminta</h3>
+      <div className='ala-box-otsikot'><h1>Pääasiallinen toiminta</h1></div>
       <div id="button-container-toiminta">
         <button
-          className={activeButtonToiminta === 0 ? 'active' : 'inactive'}
-          onClick={() => handleToimintaButtonClick(0)}
-        >
-          Opiskelija
-        </button>
-        <button
-          className={activeButtonToiminta === 1 ? 'active' : 'inactive'}
-          onClick={() => handleToimintaButtonClick(1)}
+          className= {activeButtonToiminta === 0 ? 'active' : 'inactive'}
+          onClick= {() => handleToimintaButtonClick(0)}
         >
           Työelämässä
         </button>
         <button
-          className={activeButtonToiminta === 2 ? 'active' : 'inactive'}
-          onClick={() => handleToimintaButtonClick(2)}
+          className= {activeButtonToiminta === 2 ? 'active' : 'inactive'}
+          onClick= {() => handleToimintaButtonClick(2)}
         >
-          Työtön
+          Työnhakija
         </button>
         <button
-          className={activeButtonToiminta === 3 ? 'active' : 'inactive'}
-          onClick={() => handleToimintaButtonClick(3)}
+          className= {activeButtonToiminta === 3 ? 'active' : 'inactive'}
+          onClick= {() => handleToimintaButtonClick(3)}
         >
           Yrittäjä
-        </button>
-        <button
-          className={activeButtonToiminta === 4 ? 'active' : 'inactive'}
-          onClick={() => handleToimintaButtonClick(4)}
-        >
-          Eläkeläinen
         </button>
       </div>
 
@@ -1534,40 +1616,44 @@ setArvoAsema(arvoAsema);
           <div className="selection-info-toiminta">
             <div className="box-hyva">
             <div className='box-peukku'><ThumbUpOffAltIcon/></div>
-            <h4>Jäsenen top 3 nostot toiminnalle {arvoToiminta}:</h4>
+            <h2>Jäsenen top 3 nostot toiminnalle {arvoToiminta}:</h2>
+            <div className='box-list'>
             <p>{getToimintaTeksti1(activeButtonToiminta)}<br/></p>
+            </div>
             </div>
             <div className="box-huono">
             <div className='box-peukku'><ThumbDownOffAltIcon/></div>
-            <h4>Ei jäsenen vinkit</h4>
+            <h2>Ei jäsenen vinkit</h2>
+            <div className='box-list'>
             <p>{getToimintaTeksti2(activeButtonToiminta)}<br/></p>
+            </div>
             </div>
           </div>
         )}
 
-      <h3>Asemataso</h3>
+      <div className='ala-box-otsikot'><h1>Asema</h1></div>
       <div id="button-container-asemataso">
         <button
-          className={activeButtonAsema === 0 ? 'active' : 'inactive'}
-          onClick={() => handleAsemaButtonClick(0)}
+          className= {activeButtonAsema === 0 ? 'active' : 'inactive'}
+          onClick= {() => handleAsemaButtonClick(0)}
         >
           Asiantuntija
         </button>
         <button
-          className={activeButtonAsema === 1 ? 'active' : 'inactive'}
-          onClick={() => handleAsemaButtonClick(1)}
+          className= {activeButtonAsema === 1 ? 'active' : 'inactive'}
+          onClick= {() => handleAsemaButtonClick(1)}
         >
-          Päällikkö
+          Päälikkö
         </button>
         <button
-          className={activeButtonAsema === 2 ? 'active' : 'inactive'}
-          onClick={() => handleAsemaButtonClick(2)}
+          className= {activeButtonAsema === 2 ? 'active' : 'inactive'}
+          onClick= {() => handleAsemaButtonClick(2)}
         >
           Johtaja
         </button>
         <button
-          className={activeButtonAsema === 3 ? 'active' : 'inactive'}
-          onClick={() => handleAsemaButtonClick(3)}
+          className= {activeButtonAsema === 3 ? 'active' : 'inactive'}
+          onClick= {() => handleAsemaButtonClick(3)}
         >
           Ei mikään näistä
         </button>
@@ -1578,13 +1664,17 @@ setArvoAsema(arvoAsema);
           <div className="selection-info-asema">
             <div className="box-hyva">
             <div className='box-peukku'><ThumbUpOffAltIcon/></div>
-            <h4>Jäsenen top 3 nostot asemalle {arvoAsema}:</h4>
+            <h2>Jäsenen top 3 nostot asemalle {arvoAsema}:</h2>
+            <div className='box-list'>
             <p>{getAsemaTeksti1(activeButtonAsema)}<br/></p>
+            </div>
             </div>
             <div className="box-huono">
             <div className='box-peukku'><ThumbDownOffAltIcon/></div>
-            <h4>Ei jäsenen vinkit</h4>
+            <h2>Ei jäsenen vinkit</h2>
+            <div className='box-list'>
             <p>{getAsemaTeksti2(activeButtonAsema)}<br/></p>
+            </div>
             </div>
           </div>
         )}

@@ -30,10 +30,11 @@ const WordCarousel = () => {
   return (
     <div className='liikkuvaTeksti' ref={carouselRef}>
       <p>Yhteisö ja verkosto</p>
+      <p>Vaikuttamistyö <br></br>ja Edunvalvonta</p>
       <p>Tapahtumat</p>
-      <p>Jäsenedut</p>
       <p>Urapalvelut</p>
       <p>Lakipalvelut</p>
+      <p>Jäsenedut</p>
     </div>
   );
 };

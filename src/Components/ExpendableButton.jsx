@@ -11,7 +11,7 @@ export const ExpendableButton = ({ isOpen = false, toggle, showMaterialSymbol = 
         <span
           className="material-symbols-outlined"
           style={{
-            transform: `rotate(${isOpen ? 540 : 180}deg)`,
+            transform: `rotate(${isOpen ? 180 : 180}deg)`,
             transition: "all 0.25s",
           }}
         >

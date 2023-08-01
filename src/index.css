@@ -20,12 +20,6 @@ button {
   cursor: pointer;
 }
 
-.button-td {
-  padding: 0 10px;
-  width: 2px;
-}
-
-
 :root {
   --transition: all 0.3s linear;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
