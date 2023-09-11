@@ -1107,7 +1107,7 @@ setArvoAsema(arvoAsema);
               <ul>
                 <li>Mentorointi on ammatillisen kehittymisen ohjelma. Se on vuorovaikutukseen perustuvaa yhteistyötä, jonka tavoitteena on edistää aktorin (mentoroitava) ammatillista kasvua ja kehittymistä sekä antaa mentorille mahdollisuus kehittää vuorovaikutustaitojaan, oppia uutta ja kokea auttamisen iloa.</li>
                 <br></br>
-                <li style={{ fontStyle: 'italic' }}>Mentorointiohjelmat yleensä maksavat noin 2 000 €.</li>
+                <li style={{ fontStyle: 'italic' }}>Mentorointiohjelmat yleensä maksavat noin 2 000 €. HUOM! Ohjelma maksaa 200€ jäsenmaksun päälle.</li>
               </ul>
             )}
           </div>
