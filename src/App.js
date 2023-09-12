@@ -1598,7 +1598,7 @@ setArvoAsema(arvoAsema);
             <ul>
            <p4 style={{ fontWeight: 'bold' }}>Jäsenmaksu yhteensä</p4>
            </ul>
-           <p className="price-value-yhteensä">= {totalMembershipFee} €</p>
+           <p className="price-value-yhteensä">=  {-(-(calculatePrice())-40)} €</p>
            </div>
            </div>
            <div className="price-wrapper2">
