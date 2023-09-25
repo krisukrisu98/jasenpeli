@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/jasenpeli/static/css/main.bd6e53fd.css",
-    "main.js": "/jasenpeli/static/js/main.44dd7509.js",
+    "main.css": "/jasenpeli/static/css/main.a976f35b.css",
+    "main.js": "/jasenpeli/static/js/main.6560b2c7.js",
     "static/js/787.7ff8cb2c.chunk.js": "/jasenpeli/static/js/787.7ff8cb2c.chunk.js",
     "static/media/ryhma.svg": "/jasenpeli/static/media/ryhma.26dc60e4d3e30730fe7c03a3ab7f7788.svg",
     "static/media/aarrearkku.svg": "/jasenpeli/static/media/aarrearkku.0eccaa9a8e227611d8fc0e1fd391e573.svg",
     "static/media/raha.svg": "/jasenpeli/static/media/raha.686fdcae6d18cd792f301beb77d8e08a.svg",
     "index.html": "/jasenpeli/index.html",
-    "main.bd6e53fd.css.map": "/jasenpeli/static/css/main.bd6e53fd.css.map",
-    "main.44dd7509.js.map": "/jasenpeli/static/js/main.44dd7509.js.map",
+    "main.a976f35b.css.map": "/jasenpeli/static/css/main.a976f35b.css.map",
+    "main.6560b2c7.js.map": "/jasenpeli/static/js/main.6560b2c7.js.map",
     "787.7ff8cb2c.chunk.js.map": "/jasenpeli/static/js/787.7ff8cb2c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd6e53fd.css",
-    "static/js/main.44dd7509.js"
+    "static/css/main.a976f35b.css",
+    "static/js/main.6560b2c7.js"
   ]
 }
