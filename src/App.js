@@ -521,7 +521,7 @@ setArvoToiminta(arvoToiminta);
 if (index === 0) {
   arvoAsema = "asiantuntija";
 } else if (index === 1) {
-  arvoAsema = "päälikkö";
+  arvoAsema = "päällikkö";
 } else if (index === 2) {
   arvoAsema = "johtaja";
 }else if (index === 3) {
@@ -1570,9 +1570,7 @@ setArvoAsema(arvoAsema);
          <div className='yleinen-rahallinen-etu'>
          <div className="price-wrapper2">
            <h2>Tämän verran sinä hyödyt:</h2>
-           <div className='raha-alataso'>
-           <p className="price-value">= {calculateTotalPrice().toLocaleString('fi-FI')} €</p>
-           </div>
+           <h3 className="price-value2">= {calculateTotalPrice().toLocaleString('fi-FI')} €</h3>
            </div>
            <h2>Mitä maksat?</h2>
            <div className='box-list'>
@@ -1721,7 +1719,7 @@ setArvoAsema(arvoAsema);
           className= {activeButtonAsema === 1 ? 'active' : 'inactive'}
           onClick= {() => handleAsemaButtonClick(1)}
         >
-          Päälikkö
+          Päällikkö
         </button>
         <button
           className= {activeButtonAsema === 2 ? 'active' : 'inactive'}

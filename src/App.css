@@ -411,6 +411,10 @@ h2 {
   white-space: nowrap;
 }
 
+.price-value2 {
+ margin-left: 20px;
+}
+
 .price-wrapper {
   display: flex;
   align-items: center;
@@ -445,6 +449,14 @@ h2 {
     padding-right: 20px;
   }
 }
+
+@media (max-width: 400px) {
+  .price-wrapper2 {
+    flex-direction: column; /* Aseta flex-suunta pystyyn */
+    align-items: flex-start; /* Vasemmalle reunalle */
+  }
+}
+
 
 .yleinen-rahallinen-etu .price-wrapper:nth-child(2)::after,
 .yleinen-rahallinen-etu .price-wrapper:nth-child(3)::after,
