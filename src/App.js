@@ -564,7 +564,7 @@ setArvoAsema(arvoAsema);
       <br></br>
       <li><p2>Edunvalvonta ja yhteiskunnallinen vaikuttamistyö - </p2>Ajamme aina ensisijaisesti jäsentemme etuja.  Pyrimme mm. työehtosopimusten kautta turvaamaan jäsenillemme parhaat mahdolliset työsuhteen ehdot, kuten sairauajanpalkka, lomarahat ja säännölliset palkankorotukset.</li>
       <br></br>
-      <li><p2>Tuhannella eurolla jäsenetuja - </p2>Hyödynnä muun muassa primus henkivakuutus - Suomen edullisisin henkivakuutus itsellesi ja puolisollesi jopa <strong>61 prosenttia</strong> normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin <strong>540 euroa</strong> henkivakuutuksen hinnassa.</li>
+      <li><p2>Tuhannella eurolla jäsenetuja - </p2>Hyödynnä muun muassa Kaleva henkivakuutus - Suomen edullisisin henkivakuutus itsellesi ja puolisollesi jopa <strong>61 prosenttia</strong> normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin <strong>540 euroa</strong> henkivakuutuksen hinnassa.</li>
     </ul>
     } else if (index === 4) {
       return <ul>
@@ -630,7 +630,7 @@ setArvoAsema(arvoAsema);
         <br></br>
         <li><p2>Edunvalvonta ja yhteiskunnallinen vaikuttamistyö - </p2>Pyrimme työehtosopimusten kautta turvaamaan jäsenillemme parhaat mahdolliset työsuhteen ehdot, kuten sairauajanpalkka, lomarahat ja säännölliset palkankorotukset.</li>
         <br></br>
-      <li><p2>Tuhannella eurolla jäsenetuja - </p2>Hyödynnä muun muassa primus henkivakuutus - Suomen edullisisin henkivakuutus itsellesi ja puolisollesi jopa <strong>61 prosenttia</strong> normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin <strong>540 euroa</strong> henkivakuutuksen hinnassa.</li>
+      <li><p2>Tuhannella eurolla jäsenetuja - </p2>Hyödynnä muun muassa Kaleva henkivakuutus - Suomen edullisisin henkivakuutus itsellesi ja puolisollesi jopa <strong>61 prosenttia</strong> normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin <strong>540 euroa</strong> henkivakuutuksen hinnassa.</li>
       </ul>;
       } else if (index === 1) {
         return <ul>
@@ -638,7 +638,7 @@ setArvoAsema(arvoAsema);
         <br></br>
         <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa - </p2> Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Uravalmentajillamme on erinomainen käsitys ekonomien palkoista ja palkkakehityksestä.</li>
         <br></br>
-        <li><p2>Tuhannella eurolla jäsenetuja - </p2>Hyödynnä muun muassa primus henkivakuutus - Suomen edullisisin henkivakuutus itsellesi ja puolisollesi jopa <strong>61 prosenttia</strong> normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin <strong>540 euroa</strong> henkivakuutuksen hinnassa.</li>
+        <li><p2>Tuhannella eurolla jäsenetuja - </p2>Hyödynnä muun muassa Kaleva henkivakuutus - Suomen edullisisin henkivakuutus itsellesi ja puolisollesi jopa <strong>61 prosenttia</strong> normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin <strong>540 euroa</strong> henkivakuutuksen hinnassa.</li>
       </ul>;
       } else if (index === 2) {
         return <ul>
@@ -646,7 +646,7 @@ setArvoAsema(arvoAsema);
         <br></br>
         <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa - </p2> Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Uravalmentajillamme on erinomainen käsitys ekonomien palkoista ja palkkakehityksestä.</li>
         <br></br>
-        <li><p2>Primus henkivakuutus - </p2>Saat Suomen edullisimman henkivakuutuksen itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin 540 euroa henkivakuutuksen hinnassa. </li>
+        <li><p2>Kaleva henkivakuutus - </p2>Saat Suomen edullisimman henkivakuutuksen itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin 540 euroa henkivakuutuksen hinnassa. </li>
       </ul>;
       } else if (index === 3) {
         return <ul>
@@ -654,7 +654,7 @@ setArvoAsema(arvoAsema);
         <br></br>
         <li><p2>Tonnin jäsenedut - </p2>Ammattilehti jopa 70 % alennuksella, Danske Bankin asuntolainaedut (jopa 1600€), Henkivakuutus 61 % alennuksella ja koko Suomen laajuiset Member+ edut. </li>
         <br></br>
-        <li><p2>Tuhannella eurolla jäsenetuja - </p2>Hyödynnä muun muassa primus henkivakuutus - Suomen edullisisin henkivakuutus itsellesi ja puolisollesi jopa <strong>61 prosenttia</strong> normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin <strong>540 euroa</strong> henkivakuutuksen hinnassa.</li>
+        <li><p2>Tuhannella eurolla jäsenetuja - </p2>Hyödynnä muun muassa Kaleva henkivakuutus - Suomen edullisisin henkivakuutus itsellesi ja puolisollesi jopa <strong>61 prosenttia</strong> normaalihintoja edullisemmin. Jäsenet ovat säästäneet keskimäärin <strong>540 euroa</strong> henkivakuutuksen hinnassa.</li>
       </ul>;
       } else if (index === 4) {
         return <ul>
@@ -1459,7 +1459,7 @@ setArvoAsema(arvoAsema);
           <div className="box-yhteenveto-alaotsikko-teksti">
             <span>
               <ExpendableButton isOpen= {showMoreTextKaikki6Ala4} toggle= {handleShowMoreClickKaikki6Ala4} showMaterialSymbol= {false} />
-              Primus henkivakuutus
+              Kaleva henkivakuutus
             </span>
             <label>{selectedProducts[33].price} €
               <input
