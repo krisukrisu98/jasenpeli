@@ -18,7 +18,7 @@ function App() {
   // Tuotteet ja niiden hinnoittelu sekä laskentalogiikka 
 
   const [isChecked, setIsChecked] = useState(false);
-  const originalPrice = 189;
+  const originalPrice = 199;
   const discount = 0.5;
   const localAssociationFee = 40;
   const totalMembershipFee = 292;
@@ -1513,9 +1513,9 @@ setArvoAsema(arvoAsema);
           </div>
           {showMoreTextKaikki6Ala6 && (
             <ul>
-              <li>Jäsenenä saat valitsemasi ammattimedian tilauksen 87–60 % markkinahintaa edullisemmin, oli valintasi digi tai printti.</li>
+              <li>Jäsenenä saat valitsemasi ammattimedian tilauksen 57-86 % markkinahintaa edullisemmin, oli valintasi digi tai printti.</li>
               <br></br>
-              <li style={{ fontStyle: 'italic' }}>Esim. Talouselämän digi ja printti -yhdistelmätilauksesta säästät 449 euroa (normaalihinta 519 e, jäsenetuhinta 70 e vuodelle 2023).</li>
+              <li style={{ fontStyle: 'italic' }}>Esim. Talouselämän digi ja printti -yhdistelmätilauksesta säästät 464 euroa (normaalihinta 539 e, jäsenetuhinta 75 e vuodelle 2023).</li>
             </ul>
           )}
           
