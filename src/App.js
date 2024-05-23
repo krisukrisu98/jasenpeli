@@ -536,7 +536,7 @@ setArvoAsema(arvoAsema);
    const getIkaTeksti1 = (index) => {
     if (index === 0) {
       return   <ul>
-      <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2> Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä saada korvausta vastapuolen oikeudenkäyntikuluista, enintään 20 000 euroon saakka.</li>
+      <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2> Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä saada korvausta vastapuolen oikeudenkäyntikuluista, enintään 20 000 euroon saakka.</li>
       <br></br>
       <li><p2>Ammatillinen kehittyminen - </p2>Tarjoamme jäsenillemme monipuolisia koulutus- ja kehittymismahdollisuuksia. Järjestämme ammatillisia koulutuksia, työpajoja ja webinaareja. Palvelumme auttavat kehittämään osaamistasi ja pysymään ajan tasalla alan muutoksista. Jäsenenä saat myös pääsyn liiton tarjoamiin urapalveluihin, kuten työnhakuneuvontaan ja uravalmennukseen. </li>
       <br></br>
@@ -544,7 +544,7 @@ setArvoAsema(arvoAsema);
     </ul>
     } else if (index === 1) {
       return <ul>
-      <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+      <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
       <br></br>
       <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa ja koulutuksia - </p2>Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Tarjoamme jäsenilleen jatkuvia kehittymismahdollisuuksia erilaisten koulutusten ja tapahtumien avulla.</li>
       <br></br>
@@ -552,7 +552,7 @@ setArvoAsema(arvoAsema);
     </ul>
     } else if (index === 2) {
       return <ul>
-      <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+      <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
       <br></br>
       <li><p2>Edunvalvonta ja yhteiskunnallinen vaikuttamistyö - </p2>Ajamme aina ensisijaisesti jäsentemme etuja.  Pyrimme mm. työehtosopimusten kautta turvaamaan jäsenillemme parhaat mahdolliset työsuhteen ehdot, kuten sairauajanpalkka, lomarahat ja säännölliset palkankorotukset.</li>
       <br></br>
@@ -560,7 +560,7 @@ setArvoAsema(arvoAsema);
     </ul>
     } else if (index === 3) {
       return <ul>
-      <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+      <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
       <br></br>
       <li><p2>Edunvalvonta ja yhteiskunnallinen vaikuttamistyö - </p2>Ajamme aina ensisijaisesti jäsentemme etuja.  Pyrimme mm. työehtosopimusten kautta turvaamaan jäsenillemme parhaat mahdolliset työsuhteen ehdot, kuten sairauajanpalkka, lomarahat ja säännölliset palkankorotukset.</li>
       <br></br>
@@ -626,7 +626,7 @@ setArvoAsema(arvoAsema);
      const getToimintaTeksti1 = (index) => {
       if (index === 0) {
         return <ul>
-      <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+      <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
         <br></br>
         <li><p2>Edunvalvonta ja yhteiskunnallinen vaikuttamistyö - </p2>Pyrimme työehtosopimusten kautta turvaamaan jäsenillemme parhaat mahdolliset työsuhteen ehdot, kuten sairauajanpalkka, lomarahat ja säännölliset palkankorotukset.</li>
         <br></br>
@@ -634,7 +634,7 @@ setArvoAsema(arvoAsema);
       </ul>;
       } else if (index === 1) {
         return <ul>
-        <li><p2>Henkilökohtaista juridinen nuvontaa</p2> työelämään liittyvissä asioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen.</li>
+        <li><p2>Henkilökohtaista juridinen neuvontaa</p2> työelämään liittyvissä asioissa. Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen.</li>
         <br></br>
         <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa - </p2> Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Uravalmentajillamme on erinomainen käsitys ekonomien palkoista ja palkkakehityksestä.</li>
         <br></br>
@@ -642,7 +642,7 @@ setArvoAsema(arvoAsema);
       </ul>;
       } else if (index === 2) {
         return <ul>
-        <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+        <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
         <br></br>
         <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa - </p2> Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Uravalmentajillamme on erinomainen käsitys ekonomien palkoista ja palkkakehityksestä.</li>
         <br></br>
@@ -650,7 +650,7 @@ setArvoAsema(arvoAsema);
       </ul>;
       } else if (index === 3) {
         return <ul>
-       <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+       <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
         <br></br>
         <li><p2>Tonnin jäsenedut - </p2>Ammattilehti jopa 70 % alennuksella, Danske Bankin asuntolainaedut (jopa 1600€), Henkivakuutus 61 % alennuksella ja koko Suomen laajuiset Member+ edut. </li>
         <br></br>
@@ -717,13 +717,13 @@ setArvoAsema(arvoAsema);
         return <ul>
         <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa - </p2>Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Uravalmentajillamme on erinomainen käsitys ekonomien palkoista ja palkkakehityksestä.</li>
         <br></br>
-        <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+        <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
         <br></br>
         <li><p2>Verkostoitumispalvelu - </p2>Löydät palvelusta helposti uusia tuttavuuksia, jotka jakavat esimerkiksi samat ammatillisen kiinnostuksen kohteet kuin sinä. Voit myös laajentaa osaamistasi uusille alueille verkostoitumalla sellaisten ihmisten kanssa, joilla on osaamista, jota sinä esimerkiksi haluaisit hankkia.</li>
       </ul>;
       } else if (index === 1) {
         return <ul>
-        <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+        <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
         <br></br>
         <li><p2>Yksilöllistä uravalmennusta ja palkkaneuvontaa - </p2>Luottamukselliset keskustelut uravalmentajan kanssa auttavat sinua löytämään ratkaisuja urasi suuntaan, työnhakuun, työhyvinvointiin ja palkkakehitykseen. Uravalmentajillamme on erinomainen käsitys ekonomien palkoista ja palkkakehityksestä.</li>
         <br></br>
@@ -731,7 +731,7 @@ setArvoAsema(arvoAsema);
       </ul>;
       } else if (index === 2) {
         return <ul>
-        <li><p2>Henkilökohtaista juridinen nuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
+        <li><p2>Henkilökohtaista juridinen neuvontaa työelämän lakiasioissa - </p2>Mahdollisuus hakea Oikeusapua jäsenen työ-, virka- tai toimissudetta koskevassa rikosasiassa sekä näissä tapauksissa mahdollisten vastapuolen oikeaudenkäyntikulujen korvaaminen 20 000 euroon asti.</li>
         <br></br>
         <li><p2>Ammatillinen verkostoituminen - </p2>Jäsenenä voit osallistua tapahtumiin, joissa tapaat kollegoitasi eri toimialoilta. Tällaiset verkostot voivat tarjota mahdollisuuksia oppia uutta, vaihtaa ajatuksia ja jakaa parhaita käytäntöjä. </li>
         <br></br>
