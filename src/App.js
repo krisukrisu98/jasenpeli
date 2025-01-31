@@ -68,10 +68,10 @@ function App() {
     { id: 31, price: 1200, selected: true },
     { id: 32, price: 700, selected: true },
     { id: 33, price: 84, selected: true },
-    { id: 34, price: 574, selected: true },
+    { id: 34, price: 643, selected: true },
     { id: 35, price: 32, selected: true },
     { id: 36, price: 449, selected: true },
-    { id: 37, price: 159.80, selected: true },
+    { id: 37, price: 196.80, selected: true },
     { id: 38, price: 50, selected: true },
     { id: 39, price: 0, selected: true }
   ]);
@@ -1471,9 +1471,9 @@ setArvoAsema(arvoAsema);
           </div>
           {showMoreTextKaikki6Ala4 && (
             <ul>
-              <li>Saat Suomen edullisimman henkivakuutuksen* itsellesi ja puolisollesi jopa 61 prosenttia normaalihintoja edullisemmin.</li>
+              <li>Saat Suomen edullisimman henkivakuutuksen* itsellesi ja puolisollesi jopa 62,6 prosenttia normaalihintoja edullisemmin.</li>
               <br></br>
-              <li style={{ fontStyle: 'italic' }}>Jäsenet ovat säästäneet keskimäärin 574 euroa henkivakuutuksen hinnassa vuosittain.</li>
+              <li style={{ fontStyle: 'italic' }}>Jäsenet ovat säästäneet keskimäärin 643 euroa henkivakuutuksen hinnassa vuosittain.</li>
             </ul>
           )}
           
@@ -1515,7 +1515,7 @@ setArvoAsema(arvoAsema);
             <ul>
               <li>Jäsenenä saat valitsemasi ammattimedian tilauksen 57-86 % markkinahintaa edullisemmin, oli valintasi digi tai printti.</li>
               <br></br>
-              <li style={{ fontStyle: 'italic' }}>Esim. Talouselämän digi ja printti -yhdistelmätilauksesta säästät 464 euroa (normaalihinta 539 e, jäsenetuhinta 75 e vuodelle 2023).</li>
+              <li style={{ fontStyle: 'italic' }}>Esim. Talouselämän digi ja printti -yhdistelmätilauksesta säästät 483 euroa (normaalihinta 559 e, jäsenetuhinta 76 e vuodelle 2025).</li>
             </ul>
           )}
           
@@ -1536,7 +1536,7 @@ setArvoAsema(arvoAsema);
             <ul>
               <li>Ruotsinkielinen HBL Digital tarjoaa sinulle sähköisiä sanomalehtiä ja uutissyötteitä.</li>
               <br></br>
-              <li style={{ fontStyle: 'italic' }}>Säästät 159,80 euroa. Jäsenenä voit ostaa HBL Digital lehden 55 euron jäsenhintaan, kun normaalihinta on 214,80 e.</li>
+              <li style={{ fontStyle: 'italic' }}>Säästät 196,80 euroa. Jäsenenä voit ostaa HBL Digital lehden 66 euron jäsenhintaan, kun normaalihinta on 262,80 e.</li>
             </ul>
           )}
           
