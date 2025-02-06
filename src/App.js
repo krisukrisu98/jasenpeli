@@ -50,7 +50,7 @@ function App() {
     { id: 13, price: 100, selected: true },
     { id: 14, price: 250, selected: true },
     { id: 15, price: 100, selected: true },
-    { id: 16, price: 2000, selected: true },
+    { id: 16, price: 0, selected: true }, // Ei käytössä, entinen mentorointi palvelu
     { id: 17, price: 100, selected: true },
     { id: 18, price: 60, selected: true },
     { id: 19, price: 120, selected: true },
@@ -1091,23 +1091,6 @@ setArvoAsema(arvoAsema);
                 <li>CV:n ja LinkedIn -profiilin kuntotesti, itsetuntemuksen ja työnhaun ekonomeille suunnitellut materiaalit käytössäsi milloin tahansa.</li>
                 <br></br>
                 <li style={{ fontStyle: 'italic' }}>Ei vastaavaa vapailla markkinoilla.</li>
-              </ul>
-            )}
-             <div className="box-yhteenveto-alaotsikko-teksti">
-          <span><ExpendableButton isOpen= {showMoreTextKaikki3Ala7} toggle= {handleShowMoreClickKaikki3Ala7} showMaterialSymbol= {false} />Mentorointi</span>
-            <label>{selectedProducts[15].price.toLocaleString('fi-FI')} €
-            <input
-              type="checkbox" id="check"
-              checked= {selectedProducts[15].selected}
-              onChange= {() => handleProductToggle(selectedProducts[15].id)}
-            />
-          </label>
-          </div>
-            {showMoreTextKaikki3Ala7 && (
-              <ul>
-                <li>Mentorointi on ammatillisen kehittymisen ohjelma. Se on vuorovaikutukseen perustuvaa yhteistyötä, jonka tavoitteena on edistää aktorin (mentoroitava) ammatillista kasvua ja kehittymistä sekä antaa mentorille mahdollisuus kehittää vuorovaikutustaitojaan, oppia uutta ja kokea auttamisen iloa.</li>
-                <br></br>
-                <li style={{ fontStyle: 'italic' }}>Mentorointiohjelmat yleensä maksavat noin 2 000 €. HUOM! Ohjelma maksaa 200€ jäsenmaksun päälle.</li>
               </ul>
             )}
           </div>
